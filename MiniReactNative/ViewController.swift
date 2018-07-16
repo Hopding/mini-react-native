@@ -24,15 +24,36 @@ class ViewController: UIViewController {
         }
     }
     
+    var jsPressHandler: JSValue?
+    
     func runMainBundle() throws {
         let mainBundleUrl = Bundle.main.url(forResource:"main", withExtension: "js")
         do {
             let mainBundle = try String.init(contentsOf: mainBundleUrl!)
             let jsContext = JSContext()!
+            jsContext.exceptionHandler = { context, exception in
+                print("JS Error: \(exception)")
+            }
             jsContext.evaluateScript(mainBundle)
+
+            let genButton: @convention(block) (String) -> [String: String] = { input in
+                return [
+                    "type": "Button",
+                    "color": "red",
+                    "title": "From Swift, Cool!",
+                ]
+            }
+            jsContext.setObject(unsafeBitCast(genButton, to: AnyObject.self), forKeyedSubscript: "genButton" as NSCopying & NSObjectProtocol)
+            
+            let log: @convention(block) (String) -> Void = { input in
+                print(input)
+            }
+            jsContext.setObject(unsafeBitCast(log, to: AnyObject.self), forKeyedSubscript: "log" as NSCopying & NSObjectProtocol)
             
             jsContext.evaluateScript("const producer = new Producer()")
             let res = jsContext.evaluateScript("producer.produce()")
+            jsPressHandler = jsContext.evaluateScript("producer.handleButtonPress")
+            
             var idx = 0
             for object in res?.toArray() as! Array<[String: String]> {
                 let type = object["type"]
@@ -60,17 +81,10 @@ class ViewController: UIViewController {
         } catch {
             print("Failed to load main bundle!")
         }
-        
-//        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-//        button.backgroundColor = .green
-//        button.setTitle("Test Button", for: .normal)
-//        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-//
-//        self.view.addSubview(button)
     }
     
     @objc func buttonAction(sender: UIButton!) {
-        print("Button tapped")
+        jsPressHandler?.call(withArguments: [])
     }
 
 }
