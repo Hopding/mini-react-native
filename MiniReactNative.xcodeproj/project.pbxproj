@@ -13,6 +13,9 @@
 		07112F8620FC2DC400650F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8520FC2DC400650F12 /* Assets.xcassets */; };
 		07112F8920FC2DC400650F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8720FC2DC400650F12 /* LaunchScreen.storyboard */; };
 		07112F9120FC2FEA00650F12 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 07112F9020FC2FEA00650F12 /* main.js */; };
+		075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CB20FD4C6D0001654A /* JSBundleHarness.swift */; };
+		075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CE20FD5D640001654A /* JSBundleInjector.swift */; };
+		075399D120FD63F00001654A /* UIColorFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399D020FD63F00001654A /* UIColorFrom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		07112F8820FC2DC400650F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07112F8A20FC2DC400650F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07112F9020FC2FEA00650F12 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		075399CB20FD4C6D0001654A /* JSBundleHarness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleHarness.swift; sourceTree = "<group>"; };
+		075399CE20FD5D640001654A /* JSBundleInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleInjector.swift; sourceTree = "<group>"; };
+		075399D020FD63F00001654A /* UIColorFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFrom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		07112F7D20FC2DC300650F12 /* MiniReactNative */ = {
 			isa = PBXGroup;
 			children = (
+				075399CD20FD5D420001654A /* JSBundle */,
 				07112F7E20FC2DC300650F12 /* AppDelegate.swift */,
 				07112F8020FC2DC300650F12 /* ViewController.swift */,
 				07112F8220FC2DC300650F12 /* Main.storyboard */,
@@ -65,6 +72,16 @@
 				07112F8A20FC2DC400650F12 /* Info.plist */,
 			);
 			path = MiniReactNative;
+			sourceTree = "<group>";
+		};
+		075399CD20FD5D420001654A /* JSBundle */ = {
+			isa = PBXGroup;
+			children = (
+				075399CB20FD4C6D0001654A /* JSBundleHarness.swift */,
+				075399CE20FD5D640001654A /* JSBundleInjector.swift */,
+				075399D020FD63F00001654A /* UIColorFrom.swift */,
+			);
+			path = JSBundle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				07112F8120FC2DC300650F12 /* ViewController.swift in Sources */,
+				075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */,
+				075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */,
 				07112F7F20FC2DC300650F12 /* AppDelegate.swift in Sources */,
+				075399D120FD63F00001654A /* UIColorFrom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
