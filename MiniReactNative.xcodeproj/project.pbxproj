@@ -12,6 +12,7 @@
 		07112F8420FC2DC300650F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8220FC2DC300650F12 /* Main.storyboard */; };
 		07112F8620FC2DC400650F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8520FC2DC400650F12 /* Assets.xcassets */; };
 		07112F8920FC2DC400650F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8720FC2DC400650F12 /* LaunchScreen.storyboard */; };
+		07112F9120FC2FEA00650F12 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 07112F9020FC2FEA00650F12 /* main.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		07112F8520FC2DC400650F12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07112F8820FC2DC400650F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07112F8A20FC2DC400650F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07112F9020FC2FEA00650F12 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				07112F7E20FC2DC300650F12 /* AppDelegate.swift */,
 				07112F8020FC2DC300650F12 /* ViewController.swift */,
 				07112F8220FC2DC300650F12 /* Main.storyboard */,
+				07112F9020FC2FEA00650F12 /* main.js */,
 				07112F8520FC2DC400650F12 /* Assets.xcassets */,
 				07112F8720FC2DC400650F12 /* LaunchScreen.storyboard */,
 				07112F8A20FC2DC400650F12 /* Info.plist */,
@@ -125,6 +128,7 @@
 				07112F8920FC2DC400650F12 /* LaunchScreen.storyboard in Resources */,
 				07112F8620FC2DC400650F12 /* Assets.xcassets in Resources */,
 				07112F8420FC2DC300650F12 /* Main.storyboard in Resources */,
+				07112F9120FC2FEA00650F12 /* main.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
