@@ -16,11 +16,7 @@ class JSBundleHarness {
         let injector = JSBundleInjector(for: jsContext)
         injector.injectGlobal(value: self.jsLog, withName: "log")
         injector.injectGlobal(value: self.render, withName: "render")
-        injector.injectGlobal(value: self.foobar, withName: "foobar")
-        injector.injectGlobal(value: self.buttonCallback, withName: "buttonCallback")
-        
-        jsContext.setObject(Foo.self, forKeyedSubscript: "Foo" as NSCopying & NSObjectProtocol)
-        jsContext.setObject(Button.self, forKeyedSubscript: "Button" as NSCopying & NSObjectProtocol)
+        injector.injectGlobal(value: self.customJsButtonCallback, withName: "customJsButtonCallback")
 
         jsContext.exceptionHandler = self.handleJSException;
         jsContext.evaluateScript(jsBundle)
@@ -37,24 +33,28 @@ class JSBundleHarness {
     func jsLog(input: String) {
         print(input)
     }
-    
-    func foobar(value: Foo) {
-        print("FOO_BAR_DESC: \(value)")
+
+    func customJsButtonCallback(value: JSValue) {
+        print("CJSBC: \(value)")
+        print("CJSBC: \(value.toObject())")
+        print("CJSBC: \(value.toDictionary())")
+        print("CJSBC: \(value.forProperty("onPress"))")
+        value.forProperty("onPress").call(withArguments: [])
     }
     
-    func buttonCallback(value: Button) {
-        print("BUTTON: \(value)")
-        value.onPress.call(withArguments: [])
+    func render(viewDescriptor: JSValue) {
+        print("DESCRIPTOR: \(viewDescriptor.toArray())")
+        renderer.render(viewDescriptor)
     }
     
-    func render(viewDescriptorJson: String) {
-        let data    = viewDescriptorJson.data(using: .utf8)
-        let decoder = JSONDecoder()
-        do {
-            let viewDescriptor = try decoder.decode(Array<ViewDescriptor>.self, from: data!)
-            self.renderer.render(viewDescriptor)
-        } catch {
-            print("Failed to deserialize JSON!")
-        }
-    }
+//    func render(viewDescriptorJson: String) {
+////        let data    = viewDescriptorJson.data(using: .utf8)
+////        let decoder = JSONDecoder()
+////        do {
+////            let viewDescriptor = try decoder.decode(Array<ViewDescriptor>.self, from: data!)
+////            self.renderer.render(viewDescriptor)
+////        } catch {
+////            print("Failed to deserialize JSON!")
+////        }
+//    }
 }

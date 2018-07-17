@@ -1,45 +1,33 @@
 const global = Function('return this')();
 
 log(Object.keys(global));
-log(Object.getOwnPropertyNames(Foo));
-log(Object.getOwnPropertyNames(Button));
 
-class App {
-  handleButtonPress() {
-    this.render([
-      { type: 'Button', color: 'blue', title: 'Rendered' },
-      { type: 'Button', color: 'purple', title: 'From JS' }
-    ]);
+class Button {
+  constructor(title, color, ...children) {
+    this.type = 'Button';
+    this.title = title;
+    this.color = color;
+    this.children = children;
   }
 
-  render() {
-    render(
-      JSON.stringify([
-        { type: 'Button', color: 'red', title: 'FOO' },
-        { type: 'Button', color: 'green', title: 'BAR' },
-        { type: 'Button', color: 'blue', title: 'QUX' },
-        {
-          type: 'Button',
-          color: 'purple',
-          title: 'BAZ',
-          children: [
-            { type: 'Button', color: 'red', title: '1' },
-            { type: 'Button', color: 'green', title: '2' }
-          ]
-        }
-      ])
-    );
+  onPress() {
+    throw new Error('"onPress" not implemented on ' + this.constructor.name);
   }
 }
 
-const app = new App();
-app.render();
+class MyFirstButton extends Button {
+  onPress() {
+    log('Logging from MyFirstButton: ' + this.super.title);
+  }
+}
 
-foobar(Foo.createWithBar('BAZ'));
-// buttonCallback(Button.createWithTitle("I'm a silly Button!"));
-buttonCallback(
-  Button.createWithTitleAndOnPress("I'm a silly Button!", () => {
-    log('Inside onPress!');
-  })
-);
-// foobar({ bar: 'BAZ' });
+render([
+  new MyFirstButton('FOO', 'red'),
+  new MyFirstButton('BAR', 'green'),
+  new MyFirstButton(
+    'QUX',
+    'blue',
+    new MyFirstButton('1', 'purple'),
+    new MyFirstButton('2', 'purple')
+  )
+]);

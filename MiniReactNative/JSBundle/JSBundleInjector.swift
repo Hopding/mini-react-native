@@ -1,44 +1,6 @@
 import Foundation
 import JavaScriptCore
 
-@objc protocol FooProtocol : JSExport {
-    var bar: String { get set }
-    static func createWithBar(_ bar: String) -> Foo
-}
-
-@objc class Foo: NSObject, FooProtocol {
-    dynamic var bar: String
-    
-    init(bar: String) {
-        self.bar = bar
-    }
-    
-    class func createWithBar(_ bar: String) -> Foo {
-        return Foo(bar: bar)
-    }
-}
-
-@objc protocol ButtonProtocol: JSExport {
-    var title: String { get set }
-    var onPress: JSValue { get set }
-    static func createWithTitleAndOnPress(_ title: String, _ onPress: JSValue) -> Button
-}
-
-@objc class Button: NSObject, ButtonProtocol {
-    dynamic var title: String
-    dynamic var onPress: JSValue
-    
-    init(title: String, onPress: JSValue) {
-        self.title = title
-        self.onPress = onPress
-    }
-
-    static func createWithTitleAndOnPress(_ title: String, _ onPress: JSValue) -> Button {
-        return Button(title: title, onPress: onPress)
-    }
-    
-}
-
 class JSBundleInjector {
     let jsContext: JSContext
     
@@ -66,13 +28,8 @@ class JSBundleInjector {
         injectObject(ofValue: castedFunc, withName: name)
     }
     
-    func injectGlobal(value: @escaping (Foo) -> Void, withName name: String) {
-        let castedFunc: @convention(block) (Foo) -> Void = value;
-        injectObject(ofValue: castedFunc, withName: name)
-    }
-    
-    func injectGlobal(value: @escaping (Button) -> Void, withName name: String) {
-        let castedFunc: @convention(block) (Button) -> Void = value;
+    func injectGlobal(value: @escaping (JSValue) -> Void, withName name: String) {
+        let castedFunc: @convention(block) (JSValue) -> Void = value;
         injectObject(ofValue: castedFunc, withName: name)
     }
     
@@ -83,3 +40,25 @@ class JSBundleInjector {
         )
     }
 }
+
+
+/* ===== Sample object that can be exported to JS ===== */
+//@objc protocol ButtonProtocol: JSExport {
+//    var title: String { get set }
+//    var onPress: JSValue { get set }
+//    static func createWithTitleAndOnPress(_ title: String, _ onPress: JSValue) -> Button
+//}
+//
+//@objc class Button: NSObject, ButtonProtocol {
+//    dynamic var title: String
+//    dynamic var onPress: JSValue
+//
+//    init(title: String, onPress: JSValue) {
+//        self.title = title
+//        self.onPress = onPress
+//    }
+//
+//    static func createWithTitleAndOnPress(_ title: String, _ onPress: JSValue) -> Button {
+//        return Button(title: title, onPress: onPress)
+//    }
+//}
