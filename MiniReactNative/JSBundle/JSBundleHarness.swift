@@ -5,12 +5,14 @@ import UIKit
 class JSBundleHarness {
     let jsContext: JSContext
     let rootView: UIView
+    let renderer: ViewDescriptorRenderer
     var jsPressHandler: JSValue? = nil
 
     init(forBundle jsBundle: String, withRootView rootView: UIView) {
         self.jsContext = JSContext()!
         self.rootView = rootView
-        
+        self.renderer = ViewDescriptorRenderer(rootView: rootView)
+
         let injector = JSBundleInjector(for: jsContext)
         injector.injectGlobal(value: self.jsLog, withName: "log")
         injector.injectGlobal(value: self.render, withName: "render")
@@ -20,7 +22,7 @@ class JSBundleHarness {
     }
     
     func handleJSException(context: JSContext?, exception: JSValue?) {
-        print("JS Error: \(String(describing: exception))")
+        print("JS Error: \(String(describing: exception! ))")
     }
     
     @objc func buttonAction(sender: UIButton!) {
@@ -31,22 +33,14 @@ class JSBundleHarness {
         print(input)
     }
     
-    func render(_ viewDescriptors: Array<[String: String]>) {
-        rootView.subviews.forEach({ $0.removeFromSuperview() })
-        var idx = 0
-        for object in viewDescriptors {
-            let type = object["type"]
-            let color = object["color"]
-            let title = object["title"]
-            print(object)
-            if (type == "Button") {
-                let button = UIButton(frame: CGRect(x: 100, y: 100 * idx, width: 100, height: 50))
-                button.backgroundColor = UIColorFrom(color)
-                button.setTitle(title, for: .normal)
-                button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-                rootView.addSubview(button)
-            }
-            idx += 1
+    func render(viewDescriptorJson: String) {
+        let data    = viewDescriptorJson.data(using: .utf8)
+        let decoder = JSONDecoder()
+        do {
+            let viewDescriptor = try decoder.decode(Array<ViewDescriptor>.self, from: data!)
+            self.renderer.render(viewDescriptor)
+        } catch {
+            print("Failed to deserialize JSON!")
         }
     }
 }

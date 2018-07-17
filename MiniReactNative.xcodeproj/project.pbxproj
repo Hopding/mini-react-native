@@ -16,6 +16,7 @@
 		075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CB20FD4C6D0001654A /* JSBundleHarness.swift */; };
 		075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CE20FD5D640001654A /* JSBundleInjector.swift */; };
 		075399D120FD63F00001654A /* UIColorFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399D020FD63F00001654A /* UIColorFrom.swift */; };
+		075399D420FD65690001654A /* ViewDescriptorRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399D320FD65690001654A /* ViewDescriptorRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		075399CB20FD4C6D0001654A /* JSBundleHarness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleHarness.swift; sourceTree = "<group>"; };
 		075399CE20FD5D640001654A /* JSBundleInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleInjector.swift; sourceTree = "<group>"; };
 		075399D020FD63F00001654A /* UIColorFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFrom.swift; sourceTree = "<group>"; };
+		075399D320FD65690001654A /* ViewDescriptorRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDescriptorRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		07112F7D20FC2DC300650F12 /* MiniReactNative */ = {
 			isa = PBXGroup;
 			children = (
+				075399D220FD65410001654A /* Renderer */,
 				075399CD20FD5D420001654A /* JSBundle */,
 				07112F7E20FC2DC300650F12 /* AppDelegate.swift */,
 				07112F8020FC2DC300650F12 /* ViewController.swift */,
@@ -79,9 +82,17 @@
 			children = (
 				075399CB20FD4C6D0001654A /* JSBundleHarness.swift */,
 				075399CE20FD5D640001654A /* JSBundleInjector.swift */,
-				075399D020FD63F00001654A /* UIColorFrom.swift */,
 			);
 			path = JSBundle;
+			sourceTree = "<group>";
+		};
+		075399D220FD65410001654A /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				075399D020FD63F00001654A /* UIColorFrom.swift */,
+				075399D320FD65690001654A /* ViewDescriptorRenderer.swift */,
+			);
+			path = Renderer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075399D420FD65690001654A /* ViewDescriptorRenderer.swift in Sources */,
 				07112F8120FC2DC300650F12 /* ViewController.swift in Sources */,
 				075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */,
 				075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */,

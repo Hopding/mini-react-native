@@ -23,6 +23,11 @@ class JSBundleInjector {
         injectObject(ofValue: castedFunc, withName: name)
     }
     
+    func injectGlobal(value: @escaping (Array<[String: JSValue]>) -> Void, withName name: String) {
+        let castedFunc: @convention(block) (Array<[String: JSValue]>) -> Void = value;
+        injectObject(ofValue: castedFunc, withName: name)
+    }
+    
     private func injectObject<T>(ofValue value: T, withName name: String) {
         jsContext.setObject(
             unsafeBitCast(value, to: AnyObject.self),

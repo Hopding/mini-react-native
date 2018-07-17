@@ -11,12 +11,22 @@ class App {
 
   render() {
     log('RENDERING');
-    render([
-      { type: 'Button', color: 'red', title: 'FOO' },
-      { type: 'Button', color: 'green', title: 'BAR' },
-      { type: 'Button', color: 'blue', title: 'QUX' },
-      { type: 'Button', color: 'purple', title: 'BAZ' }
-    ]);
+    render(
+      JSON.stringify([
+        { type: 'Button', color: 'red', title: 'FOO' },
+        { type: 'Button', color: 'green', title: 'BAR' },
+        { type: 'Button', color: 'blue', title: 'QUX' },
+        {
+          type: 'Button',
+          color: 'purple',
+          title: 'BAZ',
+          children: [
+            { type: 'Button', color: 'red', title: '1' },
+            { type: 'Button', color: 'green', title: '2' }
+          ]
+        }
+      ])
+    );
   }
 }
 
