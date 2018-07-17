@@ -18,10 +18,9 @@ class ViewDescriptorRenderer {
     
     func render(_ viewDescriptors: [ViewDescriptor]) {
         rootView.subviews.forEach({ $0.removeFromSuperview() })
-        var idx = 0
-        for descriptor in viewDescriptors {
+        for (index, descriptor) in viewDescriptors.enumerated() {
             if (descriptor.type == "Button") {
-                let button = UIButton(frame: CGRect(x: 100, y: 100 * idx, width: 100, height: 50))
+                let button = UIButton(frame: CGRect(x: 100, y: 100 * index, width: 100, height: 50))
                 button.backgroundColor = UIColorFrom(descriptor.color)
                 button.setTitle(descriptor.title, for: .normal)
                 //                button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
@@ -33,7 +32,6 @@ class ViewDescriptorRenderer {
 
                 rootView.addSubview(button)
             }
-            idx += 1
         }
     }
 }

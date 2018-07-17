@@ -1,8 +1,11 @@
 const global = Function('return this')();
 
+log(Object.keys(global));
+log(Object.getOwnPropertyNames(Foo));
+log(Object.getOwnPropertyNames(Button));
+
 class App {
   handleButtonPress() {
-    log('OMG BUTTON PRESSED');
     this.render([
       { type: 'Button', color: 'blue', title: 'Rendered' },
       { type: 'Button', color: 'purple', title: 'From JS' }
@@ -10,7 +13,6 @@ class App {
   }
 
   render() {
-    log('RENDERING');
     render(
       JSON.stringify([
         { type: 'Button', color: 'red', title: 'FOO' },
@@ -32,3 +34,12 @@ class App {
 
 const app = new App();
 app.render();
+
+foobar(Foo.createWithBar('BAZ'));
+// buttonCallback(Button.createWithTitle("I'm a silly Button!"));
+buttonCallback(
+  Button.createWithTitleAndOnPress("I'm a silly Button!", () => {
+    log('Inside onPress!');
+  })
+);
+// foobar({ bar: 'BAZ' });

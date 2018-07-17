@@ -16,6 +16,11 @@ class JSBundleHarness {
         let injector = JSBundleInjector(for: jsContext)
         injector.injectGlobal(value: self.jsLog, withName: "log")
         injector.injectGlobal(value: self.render, withName: "render")
+        injector.injectGlobal(value: self.foobar, withName: "foobar")
+        injector.injectGlobal(value: self.buttonCallback, withName: "buttonCallback")
+        
+        jsContext.setObject(Foo.self, forKeyedSubscript: "Foo" as NSCopying & NSObjectProtocol)
+        jsContext.setObject(Button.self, forKeyedSubscript: "Button" as NSCopying & NSObjectProtocol)
 
         jsContext.exceptionHandler = self.handleJSException;
         jsContext.evaluateScript(jsBundle)
@@ -31,6 +36,15 @@ class JSBundleHarness {
     
     func jsLog(input: String) {
         print(input)
+    }
+    
+    func foobar(value: Foo) {
+        print("FOO_BAR_DESC: \(value)")
+    }
+    
+    func buttonCallback(value: Button) {
+        print("BUTTON: \(value)")
+        value.onPress.call(withArguments: [])
     }
     
     func render(viewDescriptorJson: String) {
