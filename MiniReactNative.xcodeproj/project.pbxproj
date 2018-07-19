@@ -13,9 +13,13 @@
 		07112F8620FC2DC400650F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8520FC2DC400650F12 /* Assets.xcassets */; };
 		07112F8920FC2DC400650F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8720FC2DC400650F12 /* LaunchScreen.storyboard */; };
 		07112F9120FC2FEA00650F12 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 07112F9020FC2FEA00650F12 /* main.js */; };
+		07363273210010DF0023C6E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07363272210010DF0023C6E7 /* Extensions.swift */; };
+		0736327521001A390023C6E7 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327421001A390023C6E7 /* utils.swift */; };
+		0736327721001A5A0023C6E7 /* JSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327621001A5A0023C6E7 /* JSButton.swift */; };
+		0736327921001DC80023C6E7 /* JSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327821001DC80023C6E7 /* JSView.swift */; };
+		0736327B21001E910023C6E7 /* JSComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327A21001E910023C6E7 /* JSComponent.swift */; };
 		075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CB20FD4C6D0001654A /* JSBundleHarness.swift */; };
 		075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CE20FD5D640001654A /* JSBundleInjector.swift */; };
-		075399D120FD63F00001654A /* UIColorFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399D020FD63F00001654A /* UIColorFrom.swift */; };
 		075399D420FD65690001654A /* ViewDescriptorRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399D320FD65690001654A /* ViewDescriptorRenderer.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,9 +32,13 @@
 		07112F8820FC2DC400650F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07112F8A20FC2DC400650F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07112F9020FC2FEA00650F12 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		07363272210010DF0023C6E7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0736327421001A390023C6E7 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		0736327621001A5A0023C6E7 /* JSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSButton.swift; sourceTree = "<group>"; };
+		0736327821001DC80023C6E7 /* JSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSView.swift; sourceTree = "<group>"; };
+		0736327A21001E910023C6E7 /* JSComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSComponent.swift; sourceTree = "<group>"; };
 		075399CB20FD4C6D0001654A /* JSBundleHarness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleHarness.swift; sourceTree = "<group>"; };
 		075399CE20FD5D640001654A /* JSBundleInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleInjector.swift; sourceTree = "<group>"; };
-		075399D020FD63F00001654A /* UIColorFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFrom.swift; sourceTree = "<group>"; };
 		075399D320FD65690001654A /* ViewDescriptorRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDescriptorRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +72,7 @@
 		07112F7D20FC2DC300650F12 /* MiniReactNative */ = {
 			isa = PBXGroup;
 			children = (
+				07363271210010C40023C6E7 /* Components */,
 				075399D220FD65410001654A /* Renderer */,
 				075399CD20FD5D420001654A /* JSBundle */,
 				07112F7E20FC2DC300650F12 /* AppDelegate.swift */,
@@ -75,6 +84,18 @@
 				07112F8A20FC2DC400650F12 /* Info.plist */,
 			);
 			path = MiniReactNative;
+			sourceTree = "<group>";
+		};
+		07363271210010C40023C6E7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				07363272210010DF0023C6E7 /* Extensions.swift */,
+				0736327421001A390023C6E7 /* utils.swift */,
+				0736327621001A5A0023C6E7 /* JSButton.swift */,
+				0736327821001DC80023C6E7 /* JSView.swift */,
+				0736327A21001E910023C6E7 /* JSComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		075399CD20FD5D420001654A /* JSBundle */ = {
@@ -89,7 +110,6 @@
 		075399D220FD65410001654A /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
-				075399D020FD63F00001654A /* UIColorFrom.swift */,
 				075399D320FD65690001654A /* ViewDescriptorRenderer.swift */,
 			);
 			path = Renderer;
@@ -168,11 +188,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				075399D420FD65690001654A /* ViewDescriptorRenderer.swift in Sources */,
+				0736327921001DC80023C6E7 /* JSView.swift in Sources */,
 				07112F8120FC2DC300650F12 /* ViewController.swift in Sources */,
+				0736327721001A5A0023C6E7 /* JSButton.swift in Sources */,
 				075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */,
+				0736327B21001E910023C6E7 /* JSComponent.swift in Sources */,
 				075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */,
 				07112F7F20FC2DC300650F12 /* AppDelegate.swift in Sources */,
-				075399D120FD63F00001654A /* UIColorFrom.swift in Sources */,
+				07363273210010DF0023C6E7 /* Extensions.swift in Sources */,
+				0736327521001A390023C6E7 /* utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

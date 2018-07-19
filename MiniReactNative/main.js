@@ -2,32 +2,54 @@ const global = Function('return this')();
 
 log(Object.keys(global));
 
-class Button {
-  constructor(title, color, ...children) {
-    this.type = 'Button';
-    this.title = title;
-    this.color = color;
-    this.children = children;
-  }
+const colorMap = {
+  red: 'blue',
+  purple: 'green',
+  blue: 'red',
+  green: 'purple'
+};
 
-  onPress() {
-    throw new Error('"onPress" not implemented on ' + this.constructor.name);
+const makeButtons = (color1, color2) => [
+  {
+    type: 'View',
+    x: 25,
+    y: 25,
+    width: 350,
+    height: 600,
+    color: 'black',
+    children: [
+      {
+        type: 'Button',
+        x: 100,
+        y: 100,
+        width: 100,
+        height: 50,
+        color: color1,
+        title: 'JS Test 1',
+        onPress: () => {
+          log(`${color1} Button Pressed!`);
+          renderButtons(colorMap[color1], colorMap[color2]);
+        }
+      },
+      {
+        type: 'Button',
+        x: 100 + 100 + 25,
+        y: 100,
+        width: 100,
+        height: 50,
+        color: color2,
+        title: 'JS Test 2',
+        onPress: () => {
+          log(`${color2} Button Pressed!`);
+          renderButtons(colorMap[color1], colorMap[color2]);
+        }
+      }
+    ]
   }
-}
+];
 
-class MyFirstButton extends Button {
-  onPress() {
-    log('Logging from MyFirstButton: ' + this.super.title);
-  }
-}
+const renderButtons = (color1, color2) => render(makeButtons(color1, color2));
 
-render([
-  new MyFirstButton('FOO', 'red'),
-  new MyFirstButton('BAR', 'green'),
-  new MyFirstButton(
-    'QUX',
-    'blue',
-    new MyFirstButton('1', 'purple'),
-    new MyFirstButton('2', 'purple')
-  )
-]);
+renderButtons('red', 'purple');
+
+// render(makeButtons('red', 'purple'));
