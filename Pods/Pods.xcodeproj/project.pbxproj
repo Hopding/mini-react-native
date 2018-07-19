@@ -1,0 +1,696 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		021B9619235DCD2F2243F994E6C72DEB /* YGEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 34BC2C40A1B8A9AA88E9A84A7D38E814 /* YGEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B1E338695488032E5EA07E682994994 /* YGMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 98D7D634FE34A3B2E7CA158D08282FB2 /* YGMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12C97676EF4BF077654D2FDCF7448BB7 /* Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2298B58EA0A189960B39CDE13FEA6C /* Yoga.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BDECFCD86387B60167AC2E4326E90C9 /* Percent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD176B43EF95422CDBC48029572BE822 /* Percent.swift */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		1D4E3CECA58D60A6DE32000C64721C7B /* YGEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F781D48CBC8620CC550D97EFB05FB44 /* YGEnums.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		3094EB563195E33CB6F588D10108D69A /* UIView+FlexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC69077ADA9C5A6509978B209FB17E0 /* UIView+FlexLayout.swift */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		343FCE544A4C0F69EB82421EDDEE510D /* FlexLayout+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AC20CEA144C72E87A3F0836F97DC6 /* FlexLayout+Enum.swift */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		3CD8EF7ED789F251713AF284219C54A6 /* Pods-MiniReactNative-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1FC74DA82BF6C73A949A61FCE919598 /* Pods-MiniReactNative-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43D3998C1843780787B08CB5BC007D18 /* Pods-MiniReactNative-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4369555903FB429426D660C7B1B304E /* Pods-MiniReactNative-dummy.m */; };
+		4DC2FD80E0751BE23009C208EB89E527 /* YGLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F524FA8DCC6C55237F8A1F80A501E799 /* YGLayout.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		5DE1A4FBAE146F635350146D62ABA4AB /* YGLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F3FCFE2C353573C5EA8A2317BDA48632 /* YGLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6063DE451296F4BBB882F4C342C4B17B /* Yoga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 481F242AFF0DA07481266CFFBA5EDB71 /* Yoga.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		7AE9B81F88DF6E2E17F056867B570FAE /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE56E9556787F1FE6886D67610B2934B /* Utils.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		7CDE85AAA6066D42DAA7DBD7F32FECF9 /* FlexLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B93CDB6B38CE3AAA2B39AE55E780F /* FlexLayout-dummy.m */; };
+		852A559A6BAEF20D9363C659B4D3FFD3 /* YGLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9115D67DBA95E741CFFFCB9773EDC690 /* YGLayout.mm */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		8D03C664A5A702FCF53BE401CE710085 /* YGNodePrint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F991BDC7BA51E3B945D61AD3D2F35C6F /* YGNodePrint.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		958ECC1088D0C700BC70C1BFA8498D79 /* YGStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C953057DC66CD216A4E01B5C8586F3F /* YGStyle.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A34D6A8BDD5192B4B2605E8BB31EC13D /* YGLayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70BD20FF93D92F82530111B82E5A9C /* YGLayoutExtensions.swift */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		A40383874F4EA1A251787EE2139EE747 /* FlexLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D17A2700710B5FEEB3E7C277A7E7A62 /* FlexLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABC9D129737F7C0E2537A56DD22B87D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		AC297150FB77605499052F9FE449CE0D /* YGLayout+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 712041E79FA9440D3E08E266AD5CE534 /* YGLayout+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AD9434850D7FAA9C4AE33AD7027A3ACB /* YGNodePrint.h in Headers */ = {isa = PBXBuildFile; fileRef = E3C159719D501BC08C923D74E189DEDC /* YGNodePrint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B1C7EAAA0D2A11B37C50471F1F71E0DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		BAD7F9CB44CC370891D47B18BA1F22ED /* UIView+Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = EC438947FE098D1C4737C76037BAF17B /* UIView+Yoga.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9C30A462DE8142D13E099C2A7CD9895 /* Yoga-internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 466665852906EBE53E5DA11CC3A80FD8 /* Yoga-internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CA54C9F3CBC32E71218746E912908C50 /* YGStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB598312B896DE83906B1F4BE88148 /* YGStyle.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		CE91304F7BEBE653775D53447E18A12C /* YGNode.h in Headers */ = {isa = PBXBuildFile; fileRef = DE38020BC72D1DAA79C75F2A71742607 /* YGNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D0749B2CA4F0930214C2E50491EB9CCB /* FlexLayout+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC22A4EF3C3E1B3F461AA015247F285 /* FlexLayout+Private.swift */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		DE668D29461C6C00A3C3EA6BF74D28FB /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9458A556B1FD339160AEC285E2F3B98A /* Utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EA17AB5B1D60B8ECD2DDA844751EA12E /* UIView+Yoga.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3E428B14F9E0CFC8334D7EDD41E97DF8 /* UIView+Yoga.mm */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		EBCB8F16365EFA189BA84D7DB05F8812 /* FlexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E1AAEBB99D5208EAA162747E952A07 /* FlexLayout.swift */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		ECA41A30F98467A653C5DBE378621FDA /* YGLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C4941F0DC2FF759771517F66A1A729 /* YGLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F297F59E3E67DCFB443808E6F2F93103 /* YGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D9B2F0B18C03B22CC42D386F98DD042 /* YGNode.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC"; }; };
+		FBD1F8E34A94CD190B9CD708CC7E9E2B /* FlexLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 7672F772170EDAFB35699191DCA11130 /* FlexLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDFECE5E0CC125EDF6D2073AE600B72C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B2285CD86638E3C06810B90FA1A3A3F;
+			remoteInfo = FlexLayout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		114550FD489805498756F92A4E99B948 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13988D154AA5512DB93955D989AD40EE /* FlexLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlexLayout.xcconfig; sourceTree = "<group>"; };
+		1BABD0FC4C2D086A0B147F4475C39FEB /* Pods_MiniReactNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MiniReactNative.framework; path = "Pods-MiniReactNative.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31CF69B8434F225FA08342BB44C29714 /* FlexLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlexLayout-prefix.pch"; sourceTree = "<group>"; };
+		34BC2C40A1B8A9AA88E9A84A7D38E814 /* YGEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGEnums.h; path = Sources/yoga/YGEnums.h; sourceTree = "<group>"; };
+		3E428B14F9E0CFC8334D7EDD41E97DF8 /* UIView+Yoga.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIView+Yoga.mm"; path = "Sources/YogaKit/UIView+Yoga.mm"; sourceTree = "<group>"; };
+		3EAB598312B896DE83906B1F4BE88148 /* YGStyle.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGStyle.cpp; path = Sources/yoga/YGStyle.cpp; sourceTree = "<group>"; };
+		3F2CB92C401F9A8A19FD13347071E4C9 /* Pods-MiniReactNative-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MiniReactNative-frameworks.sh"; sourceTree = "<group>"; };
+		3F781D48CBC8620CC550D97EFB05FB44 /* YGEnums.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGEnums.cpp; path = Sources/yoga/YGEnums.cpp; sourceTree = "<group>"; };
+		4322D59427B3FF43150903023DE32850 /* Pods-MiniReactNative-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MiniReactNative-acknowledgements.plist"; sourceTree = "<group>"; };
+		466665852906EBE53E5DA11CC3A80FD8 /* Yoga-internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Yoga-internal.h"; path = "Sources/yoga/Yoga-internal.h"; sourceTree = "<group>"; };
+		481F242AFF0DA07481266CFFBA5EDB71 /* Yoga.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = Yoga.cpp; path = Sources/yoga/Yoga.cpp; sourceTree = "<group>"; };
+		56C4941F0DC2FF759771517F66A1A729 /* YGLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGLayout.h; path = Sources/YogaKit/YGLayout.h; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		685AFDCC40D4C63887FED57F0D5DDBC0 /* Pods-MiniReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MiniReactNative.release.xcconfig"; sourceTree = "<group>"; };
+		6F2298B58EA0A189960B39CDE13FEA6C /* Yoga.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Yoga.h; path = Sources/yoga/Yoga.h; sourceTree = "<group>"; };
+		712041E79FA9440D3E08E266AD5CE534 /* YGLayout+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "YGLayout+Private.h"; path = "Sources/YogaKit/YGLayout+Private.h"; sourceTree = "<group>"; };
+		7672F772170EDAFB35699191DCA11130 /* FlexLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexLayout.h; path = Sources/SupportingFiles/FlexLayout.h; sourceTree = "<group>"; };
+		7713D82E89FB19C42E64ED039D52D122 /* FlexLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlexLayout.framework; path = FlexLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C0B93CDB6B38CE3AAA2B39AE55E780F /* FlexLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FlexLayout-dummy.m"; sourceTree = "<group>"; };
+		7D9B2F0B18C03B22CC42D386F98DD042 /* YGNode.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGNode.cpp; path = Sources/yoga/YGNode.cpp; sourceTree = "<group>"; };
+		862A61F529284A0A54CFA72169786E96 /* Pods-MiniReactNative-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MiniReactNative-resources.sh"; sourceTree = "<group>"; };
+		9115D67DBA95E741CFFFCB9773EDC690 /* YGLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = YGLayout.mm; path = Sources/YogaKit/YGLayout.mm; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9458A556B1FD339160AEC285E2F3B98A /* Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Sources/yoga/Utils.h; sourceTree = "<group>"; };
+		98D7D634FE34A3B2E7CA158D08282FB2 /* YGMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGMacros.h; path = Sources/yoga/YGMacros.h; sourceTree = "<group>"; };
+		9C953057DC66CD216A4E01B5C8586F3F /* YGStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGStyle.h; path = Sources/yoga/YGStyle.h; sourceTree = "<group>"; };
+		9D17A2700710B5FEEB3E7C277A7E7A62 /* FlexLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlexLayout-umbrella.h"; sourceTree = "<group>"; };
+		AB5C96F9ECC2A466E1964956ECE5B2E6 /* Pods-MiniReactNative-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MiniReactNative-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AD176B43EF95422CDBC48029572BE822 /* Percent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Percent.swift; path = Sources/Percent.swift; sourceTree = "<group>"; };
+		AD70BD20FF93D92F82530111B82E5A9C /* YGLayoutExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YGLayoutExtensions.swift; path = Sources/YogaKit/YGLayoutExtensions.swift; sourceTree = "<group>"; };
+		AE56E9556787F1FE6886D67610B2934B /* Utils.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = Utils.cpp; path = Sources/yoga/Utils.cpp; sourceTree = "<group>"; };
+		BE05880F16B3E53F90865F274B721D2F /* Pods-MiniReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MiniReactNative.debug.xcconfig"; sourceTree = "<group>"; };
+		C4369555903FB429426D660C7B1B304E /* Pods-MiniReactNative-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MiniReactNative-dummy.m"; sourceTree = "<group>"; };
+		DE38020BC72D1DAA79C75F2A71742607 /* YGNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGNode.h; path = Sources/yoga/YGNode.h; sourceTree = "<group>"; };
+		E3C159719D501BC08C923D74E189DEDC /* YGNodePrint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGNodePrint.h; path = Sources/yoga/YGNodePrint.h; sourceTree = "<group>"; };
+		E6ECF06D9212EEE052168A334BE83485 /* FlexLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FlexLayout.modulemap; sourceTree = "<group>"; };
+		E82899A436CDDE5B683F0B8600C3D15C /* Pods-MiniReactNative.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MiniReactNative.modulemap"; sourceTree = "<group>"; };
+		EC438947FE098D1C4737C76037BAF17B /* UIView+Yoga.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Yoga.h"; path = "Sources/YogaKit/UIView+Yoga.h"; sourceTree = "<group>"; };
+		F1FC74DA82BF6C73A949A61FCE919598 /* Pods-MiniReactNative-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MiniReactNative-umbrella.h"; sourceTree = "<group>"; };
+		F3FCFE2C353573C5EA8A2317BDA48632 /* YGLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGLayout.h; path = Sources/yoga/YGLayout.h; sourceTree = "<group>"; };
+		F524FA8DCC6C55237F8A1F80A501E799 /* YGLayout.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGLayout.cpp; path = Sources/yoga/YGLayout.cpp; sourceTree = "<group>"; };
+		F6E1AAEBB99D5208EAA162747E952A07 /* FlexLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexLayout.swift; path = Sources/FlexLayout.swift; sourceTree = "<group>"; };
+		F991BDC7BA51E3B945D61AD3D2F35C6F /* YGNodePrint.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGNodePrint.cpp; path = Sources/yoga/YGNodePrint.cpp; sourceTree = "<group>"; };
+		FA9AC20CEA144C72E87A3F0836F97DC6 /* FlexLayout+Enum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FlexLayout+Enum.swift"; path = "Sources/Impl/FlexLayout+Enum.swift"; sourceTree = "<group>"; };
+		FB7C231D5CB5C319364D9E84E7628FAF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCC22A4EF3C3E1B3F461AA015247F285 /* FlexLayout+Private.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FlexLayout+Private.swift"; path = "Sources/Impl/FlexLayout+Private.swift"; sourceTree = "<group>"; };
+		FFC69077ADA9C5A6509978B209FB17E0 /* UIView+FlexLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+FlexLayout.swift"; path = "Sources/Impl/UIView+FlexLayout.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1412C6031A99A0CE1E1423D293A7A80B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1C7EAAA0D2A11B37C50471F1F71E0DD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		546F7CAC8F366177F6A5809D4290B2CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABC9D129737F7C0E2537A56DD22B87D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		152A9D917175AD28AAE616C66413F1BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7713D82E89FB19C42E64ED039D52D122 /* FlexLayout.framework */,
+				1BABD0FC4C2D086A0B147F4475C39FEB /* Pods_MiniReactNative.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43AF8366757873E05B0A0DE480AFDABD /* FlexLayout */ = {
+			isa = PBXGroup;
+			children = (
+				7672F772170EDAFB35699191DCA11130 /* FlexLayout.h */,
+				F6E1AAEBB99D5208EAA162747E952A07 /* FlexLayout.swift */,
+				FA9AC20CEA144C72E87A3F0836F97DC6 /* FlexLayout+Enum.swift */,
+				FCC22A4EF3C3E1B3F461AA015247F285 /* FlexLayout+Private.swift */,
+				AD176B43EF95422CDBC48029572BE822 /* Percent.swift */,
+				FFC69077ADA9C5A6509978B209FB17E0 /* UIView+FlexLayout.swift */,
+				EC438947FE098D1C4737C76037BAF17B /* UIView+Yoga.h */,
+				3E428B14F9E0CFC8334D7EDD41E97DF8 /* UIView+Yoga.mm */,
+				AE56E9556787F1FE6886D67610B2934B /* Utils.cpp */,
+				9458A556B1FD339160AEC285E2F3B98A /* Utils.h */,
+				3F781D48CBC8620CC550D97EFB05FB44 /* YGEnums.cpp */,
+				34BC2C40A1B8A9AA88E9A84A7D38E814 /* YGEnums.h */,
+				F524FA8DCC6C55237F8A1F80A501E799 /* YGLayout.cpp */,
+				56C4941F0DC2FF759771517F66A1A729 /* YGLayout.h */,
+				F3FCFE2C353573C5EA8A2317BDA48632 /* YGLayout.h */,
+				9115D67DBA95E741CFFFCB9773EDC690 /* YGLayout.mm */,
+				712041E79FA9440D3E08E266AD5CE534 /* YGLayout+Private.h */,
+				AD70BD20FF93D92F82530111B82E5A9C /* YGLayoutExtensions.swift */,
+				98D7D634FE34A3B2E7CA158D08282FB2 /* YGMacros.h */,
+				7D9B2F0B18C03B22CC42D386F98DD042 /* YGNode.cpp */,
+				DE38020BC72D1DAA79C75F2A71742607 /* YGNode.h */,
+				F991BDC7BA51E3B945D61AD3D2F35C6F /* YGNodePrint.cpp */,
+				E3C159719D501BC08C923D74E189DEDC /* YGNodePrint.h */,
+				3EAB598312B896DE83906B1F4BE88148 /* YGStyle.cpp */,
+				9C953057DC66CD216A4E01B5C8586F3F /* YGStyle.h */,
+				481F242AFF0DA07481266CFFBA5EDB71 /* Yoga.cpp */,
+				6F2298B58EA0A189960B39CDE13FEA6C /* Yoga.h */,
+				466665852906EBE53E5DA11CC3A80FD8 /* Yoga-internal.h */,
+				E75A3FEB8B06105A906B8F6BACDAA62C /* Support Files */,
+			);
+			name = FlexLayout;
+			path = FlexLayout;
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				E18FAAF406FD1512280E35C9606BA694 /* Pods */,
+				152A9D917175AD28AAE616C66413F1BB /* Products */,
+				B65CFF4CAC80BD0784258330CC2C7EA4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A980334193B2B2AA40A58293FECD403C /* Pods-MiniReactNative */ = {
+			isa = PBXGroup;
+			children = (
+				FB7C231D5CB5C319364D9E84E7628FAF /* Info.plist */,
+				E82899A436CDDE5B683F0B8600C3D15C /* Pods-MiniReactNative.modulemap */,
+				AB5C96F9ECC2A466E1964956ECE5B2E6 /* Pods-MiniReactNative-acknowledgements.markdown */,
+				4322D59427B3FF43150903023DE32850 /* Pods-MiniReactNative-acknowledgements.plist */,
+				C4369555903FB429426D660C7B1B304E /* Pods-MiniReactNative-dummy.m */,
+				3F2CB92C401F9A8A19FD13347071E4C9 /* Pods-MiniReactNative-frameworks.sh */,
+				862A61F529284A0A54CFA72169786E96 /* Pods-MiniReactNative-resources.sh */,
+				F1FC74DA82BF6C73A949A61FCE919598 /* Pods-MiniReactNative-umbrella.h */,
+				BE05880F16B3E53F90865F274B721D2F /* Pods-MiniReactNative.debug.xcconfig */,
+				685AFDCC40D4C63887FED57F0D5DDBC0 /* Pods-MiniReactNative.release.xcconfig */,
+			);
+			name = "Pods-MiniReactNative";
+			path = "Target Support Files/Pods-MiniReactNative";
+			sourceTree = "<group>";
+		};
+		B65CFF4CAC80BD0784258330CC2C7EA4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A980334193B2B2AA40A58293FECD403C /* Pods-MiniReactNative */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E18FAAF406FD1512280E35C9606BA694 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43AF8366757873E05B0A0DE480AFDABD /* FlexLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E75A3FEB8B06105A906B8F6BACDAA62C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6ECF06D9212EEE052168A334BE83485 /* FlexLayout.modulemap */,
+				13988D154AA5512DB93955D989AD40EE /* FlexLayout.xcconfig */,
+				7C0B93CDB6B38CE3AAA2B39AE55E780F /* FlexLayout-dummy.m */,
+				31CF69B8434F225FA08342BB44C29714 /* FlexLayout-prefix.pch */,
+				9D17A2700710B5FEEB3E7C277A7E7A62 /* FlexLayout-umbrella.h */,
+				114550FD489805498756F92A4E99B948 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FlexLayout";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01637DAD2ABAB514B412C2C88B18E03F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A40383874F4EA1A251787EE2139EE747 /* FlexLayout-umbrella.h in Headers */,
+				FBD1F8E34A94CD190B9CD708CC7E9E2B /* FlexLayout.h in Headers */,
+				BAD7F9CB44CC370891D47B18BA1F22ED /* UIView+Yoga.h in Headers */,
+				DE668D29461C6C00A3C3EA6BF74D28FB /* Utils.h in Headers */,
+				021B9619235DCD2F2243F994E6C72DEB /* YGEnums.h in Headers */,
+				AC297150FB77605499052F9FE449CE0D /* YGLayout+Private.h in Headers */,
+				5DE1A4FBAE146F635350146D62ABA4AB /* YGLayout.h in Headers */,
+				ECA41A30F98467A653C5DBE378621FDA /* YGLayout.h in Headers */,
+				0B1E338695488032E5EA07E682994994 /* YGMacros.h in Headers */,
+				CE91304F7BEBE653775D53447E18A12C /* YGNode.h in Headers */,
+				AD9434850D7FAA9C4AE33AD7027A3ACB /* YGNodePrint.h in Headers */,
+				958ECC1088D0C700BC70C1BFA8498D79 /* YGStyle.h in Headers */,
+				C9C30A462DE8142D13E099C2A7CD9895 /* Yoga-internal.h in Headers */,
+				12C97676EF4BF077654D2FDCF7448BB7 /* Yoga.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93AB93DD981F3F4F2A644D560DB60260 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CD8EF7ED789F251713AF284219C54A6 /* Pods-MiniReactNative-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6B2285CD86638E3C06810B90FA1A3A3F /* FlexLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6C04A5B69948A939F8D6FECA1591455 /* Build configuration list for PBXNativeTarget "FlexLayout" */;
+			buildPhases = (
+				6495E24F796E5DFB25270350450F0417 /* Sources */,
+				1412C6031A99A0CE1E1423D293A7A80B /* Frameworks */,
+				01637DAD2ABAB514B412C2C88B18E03F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlexLayout;
+			productName = FlexLayout;
+			productReference = 7713D82E89FB19C42E64ED039D52D122 /* FlexLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A9B0983034610EA2C95AB5DB877CF3EC /* Pods-MiniReactNative */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6A70B859D81FEF4046AC5DB620C12AD /* Build configuration list for PBXNativeTarget "Pods-MiniReactNative" */;
+			buildPhases = (
+				C69BBC5B553073FFC94985CD4A3A1DC9 /* Sources */,
+				546F7CAC8F366177F6A5809D4290B2CC /* Frameworks */,
+				93AB93DD981F3F4F2A644D560DB60260 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAF8633337FBE6B1F0CC17D01F0D0E81 /* PBXTargetDependency */,
+			);
+			name = "Pods-MiniReactNative";
+			productName = "Pods-MiniReactNative";
+			productReference = 1BABD0FC4C2D086A0B147F4475C39FEB /* Pods_MiniReactNative.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 152A9D917175AD28AAE616C66413F1BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B2285CD86638E3C06810B90FA1A3A3F /* FlexLayout */,
+				A9B0983034610EA2C95AB5DB877CF3EC /* Pods-MiniReactNative */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6495E24F796E5DFB25270350450F0417 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343FCE544A4C0F69EB82421EDDEE510D /* FlexLayout+Enum.swift in Sources */,
+				D0749B2CA4F0930214C2E50491EB9CCB /* FlexLayout+Private.swift in Sources */,
+				7CDE85AAA6066D42DAA7DBD7F32FECF9 /* FlexLayout-dummy.m in Sources */,
+				EBCB8F16365EFA189BA84D7DB05F8812 /* FlexLayout.swift in Sources */,
+				1BDECFCD86387B60167AC2E4326E90C9 /* Percent.swift in Sources */,
+				3094EB563195E33CB6F588D10108D69A /* UIView+FlexLayout.swift in Sources */,
+				EA17AB5B1D60B8ECD2DDA844751EA12E /* UIView+Yoga.mm in Sources */,
+				7AE9B81F88DF6E2E17F056867B570FAE /* Utils.cpp in Sources */,
+				1D4E3CECA58D60A6DE32000C64721C7B /* YGEnums.cpp in Sources */,
+				4DC2FD80E0751BE23009C208EB89E527 /* YGLayout.cpp in Sources */,
+				852A559A6BAEF20D9363C659B4D3FFD3 /* YGLayout.mm in Sources */,
+				A34D6A8BDD5192B4B2605E8BB31EC13D /* YGLayoutExtensions.swift in Sources */,
+				F297F59E3E67DCFB443808E6F2F93103 /* YGNode.cpp in Sources */,
+				8D03C664A5A702FCF53BE401CE710085 /* YGNodePrint.cpp in Sources */,
+				CA54C9F3CBC32E71218746E912908C50 /* YGStyle.cpp in Sources */,
+				6063DE451296F4BBB882F4C342C4B17B /* Yoga.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C69BBC5B553073FFC94985CD4A3A1DC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43D3998C1843780787B08CB5BC007D18 /* Pods-MiniReactNative-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CAF8633337FBE6B1F0CC17D01F0D0E81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FlexLayout;
+			target = 6B2285CD86638E3C06810B90FA1A3A3F /* FlexLayout */;
+			targetProxy = EDFECE5E0CC125EDF6D2073AE600B72C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5DC0083F57E9AB706B46C5B5D73B38D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		8FFF5A6C991EF2C1466A093951453F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13988D154AA5512DB93955D989AD40EE /* FlexLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FlexLayout/FlexLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FlexLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FlexLayout/FlexLayout.modulemap";
+				PRODUCT_MODULE_NAME = FlexLayout;
+				PRODUCT_NAME = FlexLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		901897F7EDA7CB4607744AF418D967E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13988D154AA5512DB93955D989AD40EE /* FlexLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FlexLayout/FlexLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FlexLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FlexLayout/FlexLayout.modulemap";
+				PRODUCT_MODULE_NAME = FlexLayout;
+				PRODUCT_NAME = FlexLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A7934AA7EB593A51ED34F2CE8AA8BE9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE05880F16B3E53F90865F274B721D2F /* Pods-MiniReactNative.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MiniReactNative/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AEEA80476F98EB645C4DD53EB2BB6D88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		C3CEAE25F6AE8C89F6A3339DF6F812CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 685AFDCC40D4C63887FED57F0D5DDBC0 /* Pods-MiniReactNative.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MiniReactNative/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DC0083F57E9AB706B46C5B5D73B38D8 /* Debug */,
+				AEEA80476F98EB645C4DD53EB2BB6D88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6C04A5B69948A939F8D6FECA1591455 /* Build configuration list for PBXNativeTarget "FlexLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FFF5A6C991EF2C1466A093951453F3A /* Debug */,
+				901897F7EDA7CB4607744AF418D967E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6A70B859D81FEF4046AC5DB620C12AD /* Build configuration list for PBXNativeTarget "Pods-MiniReactNative" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7934AA7EB593A51ED34F2CE8AA8BE9B /* Debug */,
+				C3CEAE25F6AE8C89F6A3339DF6F812CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036574DDE365A5E51E44622D /* Pods_MiniReactNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CA10607EEA49E7A954E6B8 /* Pods_MiniReactNative.framework */; };
 		07112F7F20FC2DC300650F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07112F7E20FC2DC300650F12 /* AppDelegate.swift */; };
 		07112F8120FC2DC300650F12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07112F8020FC2DC300650F12 /* ViewController.swift */; };
 		07112F8420FC2DC300650F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8220FC2DC300650F12 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 		0736327721001A5A0023C6E7 /* JSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327621001A5A0023C6E7 /* JSButton.swift */; };
 		0736327921001DC80023C6E7 /* JSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327821001DC80023C6E7 /* JSView.swift */; };
 		0736327B21001E910023C6E7 /* JSComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327A21001E910023C6E7 /* JSComponent.swift */; };
+		0736327D210023090023C6E7 /* FlexTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327C210023090023C6E7 /* FlexTest.swift */; };
 		075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CB20FD4C6D0001654A /* JSBundleHarness.swift */; };
 		075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CE20FD5D640001654A /* JSBundleInjector.swift */; };
 		075399D420FD65690001654A /* ViewDescriptorRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399D320FD65690001654A /* ViewDescriptorRenderer.swift */; };
@@ -37,9 +39,13 @@
 		0736327621001A5A0023C6E7 /* JSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSButton.swift; sourceTree = "<group>"; };
 		0736327821001DC80023C6E7 /* JSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSView.swift; sourceTree = "<group>"; };
 		0736327A21001E910023C6E7 /* JSComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSComponent.swift; sourceTree = "<group>"; };
+		0736327C210023090023C6E7 /* FlexTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexTest.swift; sourceTree = "<group>"; };
 		075399CB20FD4C6D0001654A /* JSBundleHarness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleHarness.swift; sourceTree = "<group>"; };
 		075399CE20FD5D640001654A /* JSBundleInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleInjector.swift; sourceTree = "<group>"; };
 		075399D320FD65690001654A /* ViewDescriptorRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDescriptorRenderer.swift; sourceTree = "<group>"; };
+		0B24F996CC8069EAD784D168 /* Pods-MiniReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniReactNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative.release.xcconfig"; sourceTree = "<group>"; };
+		91F1FF34CC08CDF11BDC3713 /* Pods-MiniReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniReactNative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative.debug.xcconfig"; sourceTree = "<group>"; };
+		E6CA10607EEA49E7A954E6B8 /* Pods_MiniReactNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniReactNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +53,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				036574DDE365A5E51E44622D /* Pods_MiniReactNative.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01ECE3F4F8DB33CC529D8053 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91F1FF34CC08CDF11BDC3713 /* Pods-MiniReactNative.debug.xcconfig */,
+				0B24F996CC8069EAD784D168 /* Pods-MiniReactNative.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		07112F7220FC2DC300650F12 = {
 			isa = PBXGroup;
 			children = (
 				07112F7D20FC2DC300650F12 /* MiniReactNative */,
 				07112F7C20FC2DC300650F12 /* Products */,
+				01ECE3F4F8DB33CC529D8053 /* Pods */,
+				31873137585309A092411A90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +100,7 @@
 				07112F8520FC2DC400650F12 /* Assets.xcassets */,
 				07112F8720FC2DC400650F12 /* LaunchScreen.storyboard */,
 				07112F8A20FC2DC400650F12 /* Info.plist */,
+				0736327C210023090023C6E7 /* FlexTest.swift */,
 			);
 			path = MiniReactNative;
 			sourceTree = "<group>";
@@ -115,6 +134,14 @@
 			path = Renderer;
 			sourceTree = "<group>";
 		};
+		31873137585309A092411A90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6CA10607EEA49E7A954E6B8 /* Pods_MiniReactNative.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07112F8D20FC2DC400650F12 /* Build configuration list for PBXNativeTarget "MiniReactNative" */;
 			buildPhases = (
+				C0FF498F6502872F3A3B1882 /* [CP] Check Pods Manifest.lock */,
 				07112F7720FC2DC300650F12 /* Sources */,
 				07112F7820FC2DC300650F12 /* Frameworks */,
 				07112F7920FC2DC300650F12 /* Resources */,
+				1DE416BF5C4EA36B2370C548 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,6 +211,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1DE416BF5C4EA36B2370C548 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FlexLayout/FlexLayout.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlexLayout.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0FF498F6502872F3A3B1882 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MiniReactNative-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		07112F7720FC2DC300650F12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -189,6 +257,7 @@
 			files = (
 				075399D420FD65690001654A /* ViewDescriptorRenderer.swift in Sources */,
 				0736327921001DC80023C6E7 /* JSView.swift in Sources */,
+				0736327D210023090023C6E7 /* FlexTest.swift in Sources */,
 				07112F8120FC2DC300650F12 /* ViewController.swift in Sources */,
 				0736327721001A5A0023C6E7 /* JSButton.swift in Sources */,
 				075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */,
@@ -338,6 +407,7 @@
 		};
 		07112F8E20FC2DC400650F12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91F1FF34CC08CDF11BDC3713 /* Pods-MiniReactNative.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -355,6 +425,7 @@
 		};
 		07112F8F20FC2DC400650F12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B24F996CC8069EAD784D168 /* Pods-MiniReactNative.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

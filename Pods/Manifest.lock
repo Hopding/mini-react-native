@@ -1,0 +1,16 @@
+PODS:
+  - FlexLayout (1.3.9)
+
+DEPENDENCIES:
+  - FlexLayout
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FlexLayout
+
+SPEC CHECKSUMS:
+  FlexLayout: dbe4b2da72ee63d7145cf32bb5bfba375aeeb9e6
+
+PODFILE CHECKSUM: 3703f811742ca76f678f8337747bf9f39845fb61
+
+COCOAPODS: 1.5.3

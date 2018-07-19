@@ -1,0 +1,6 @@
+framework module Pods_MiniReactNative {
+  umbrella header "Pods-MiniReactNative-umbrella.h"
+
+  export *
+  module * { export * }
+}
