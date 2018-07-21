@@ -7,6 +7,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let flexTest = RootFlexView()
+        self.view.backgroundColor = UIColor.red
+//        self.view = flexTest
         self.view.addSubview(flexTest)
 
 //        let mainBundleUrl = Bundle.main.url(forResource:"main", withExtension: "js")
