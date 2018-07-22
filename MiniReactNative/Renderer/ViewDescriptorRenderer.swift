@@ -12,7 +12,9 @@ class ViewDescriptorRenderer {
         rootView.subviews.forEach({ $0.removeFromSuperview() })
         
         for descriptor in toArray(viewDescriptors) {
-            rootView.addSubview(createUIComponent(fromValue: descriptor)!)
+//            let view = createUIComponent(fromValue: descriptor)!
+//            rootView.addSubview(view)
+            rootView.flex.addItem(createUIComponent(fromValue: descriptor)!)
         }
     }
 }

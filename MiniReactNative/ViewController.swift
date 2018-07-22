@@ -6,19 +6,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let flexTest = RootFlexView()
-        self.view.backgroundColor = UIColor.red
-//        self.view = flexTest
-        self.view.addSubview(flexTest)
+        let x = FlexRoot()
+        
+        self.view.addSubview(x)
 
-//        let mainBundleUrl = Bundle.main.url(forResource:"main", withExtension: "js")
-//
-//        do {
-//            let mainBundle = try String.init(contentsOf: mainBundleUrl!)
-//            let harness = JSBundleHarness(forBundle: mainBundle, withRootView: self.view)
-//        } catch {
-//            print("Failed to load main bundle!")
-//        }
+        let mainBundleUrl = Bundle.main.url(forResource:"main", withExtension: "js")
+
+        do {
+            let mainBundle = try String.init(contentsOf: mainBundleUrl!)
+            let harness = JSBundleHarness(forBundle: mainBundle, withRootView: x)
+        } catch {
+            print("Failed to load main bundle!")
+        }
     }
 
 }

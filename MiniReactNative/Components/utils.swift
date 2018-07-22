@@ -19,6 +19,13 @@ func toInt(_ value: JSValue, _ propertyName: String) -> Int {
     return Int(value.forProperty(propertyName).toInt32())
 }
 
+func toFloat(_ value: JSValue, _ propertyName: String) -> CGFloat? {
+    if let num = value.forProperty(propertyName) {
+        return num.isNumber ? CGFloat(num.toDouble()) : nil
+    }
+    return nil
+}
+
 func toString(_ value: JSValue, _ propertyName: String) -> String {
     return value.forProperty(propertyName).toString();
 }
