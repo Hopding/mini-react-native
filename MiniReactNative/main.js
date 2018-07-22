@@ -13,12 +13,19 @@ class NavigationCard {
       height: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      color: 'blue',
+      backgroundColor: 'blue',
       children: [
         {
+          type: 'Text',
+          backgroundColor: 'transparent',
+          color: 'red',
+          fontSize: 50,
+          text: 'This is a test...',
+        },
+        {
           type: 'Button',
-          color: 'green',
           title: 'Add Red Card!',
+          color: 'cyan',
           width: 100,
           height: 50,
           onPress: this.handleChange,
@@ -40,11 +47,11 @@ class NavigationCard {
           height: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          color: 'blue',
+          backgroundColor: 'blue',
           children: [
             {
               type: 'Button',
-              color: 'green',
+              backgroundColor: 'green',
               title: 'Add Red Card!',
               width: 100,
               height: 50,
@@ -52,7 +59,7 @@ class NavigationCard {
             },
             {
               type: 'Button',
-              color: 'purple',
+              backgroundColor: 'purple',
               title: 'Go Back',
               width: 100,
               height: 50,
@@ -63,7 +70,7 @@ class NavigationCard {
         {
           type: 'View',
           flex: 1,
-          color: 'red',
+          backgroundColor: 'red',
         },
       ],
     });

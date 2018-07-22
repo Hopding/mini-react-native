@@ -23,6 +23,7 @@
 		075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CE20FD5D640001654A /* JSBundleInjector.swift */; };
 		07D3E2412104D8C0008C7F37 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E2402104D8C0008C7F37 /* NavigationController.swift */; };
 		07D3E2432104E153008C7F37 /* JSViewControllerHarness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E2422104E153008C7F37 /* JSViewControllerHarness.swift */; };
+		07D3E2452104EF8C008C7F37 /* JSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E2442104EF8C008C7F37 /* JSTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		075399CE20FD5D640001654A /* JSBundleInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleInjector.swift; sourceTree = "<group>"; };
 		07D3E2402104D8C0008C7F37 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		07D3E2422104E153008C7F37 /* JSViewControllerHarness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSViewControllerHarness.swift; sourceTree = "<group>"; };
+		07D3E2442104EF8C008C7F37 /* JSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTextView.swift; sourceTree = "<group>"; };
 		0B24F996CC8069EAD784D168 /* Pods-MiniReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniReactNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative.release.xcconfig"; sourceTree = "<group>"; };
 		91F1FF34CC08CDF11BDC3713 /* Pods-MiniReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniReactNative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative.debug.xcconfig"; sourceTree = "<group>"; };
 		E6CA10607EEA49E7A954E6B8 /* Pods_MiniReactNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniReactNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				0736327621001A5A0023C6E7 /* JSButton.swift */,
 				0736327821001DC80023C6E7 /* JSView.swift */,
 				0736327A21001E910023C6E7 /* JSComponent.swift */,
+				07D3E2442104EF8C008C7F37 /* JSTextView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D3E2452104EF8C008C7F37 /* JSTextView.swift in Sources */,
 				07D3E2432104E153008C7F37 /* JSViewControllerHarness.swift in Sources */,
 				0738C3F62103EB3100CB2F52 /* FlexRootView.swift in Sources */,
 				07D3E2412104D8C0008C7F37 /* NavigationController.swift in Sources */,

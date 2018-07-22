@@ -4,11 +4,15 @@ import FlexLayout
 
 func createUIColor(from string: String?) -> UIColor {
     switch string {
-    case "green":   return UIColor.green
-    case "blue":    return UIColor.blue
-    case "red":     return UIColor.red
-    case "purple":  return UIColor.purple
-    default:        return UIColor.black
+    case "transparent": return UIColor(white: 1, alpha: 0.0)
+    case "green":       return UIColor.green
+    case "blue":        return UIColor.blue
+    case "red":         return UIColor.red
+    case "purple":      return UIColor.purple
+    case "cyan":        return UIColor.cyan
+    case "white":       return UIColor.white
+    case "black":       return UIColor.black
+    default:            return UIColor(white: 1, alpha: 0.0)
     }
 }
 
@@ -38,8 +42,11 @@ func toFunc(_ value: JSValue, _ propertyName: String) -> () -> Void {
     return { value.forProperty(propertyName).call(withArguments: []) }
 }
 
-func toInt(_ value: JSValue, _ propertyName: String) -> Int {
-    return Int(value.forProperty(propertyName).toInt32())
+func toInt(_ value: JSValue, _ propertyName: String) -> Int? {
+    if let num = value.forProperty(propertyName) {
+        return num.isNumber ? Int(num.toInt32()) : nil
+    }
+    return nil
 }
 
 func toFloat(_ value: JSValue, _ propertyName: String) -> CGFloat? {
@@ -49,12 +56,15 @@ func toFloat(_ value: JSValue, _ propertyName: String) -> CGFloat? {
     return nil
 }
 
-func toString(_ value: JSValue, _ propertyName: String) -> String {
-    return value.forProperty(propertyName).toString();
+func toString(_ value: JSValue, _ propertyName: String) -> String? {
+    if let str = value.forProperty(propertyName) {
+        return str.isString ? str.toString() : nil
+    }
+    return nil
 }
 
 func toArray(_ value: JSValue) -> [JSValue] {
-    let size = toInt(value, "length")
+    let size = toInt(value, "length")!
     var array: [JSValue] = []
     var i = 0
     while i < size {

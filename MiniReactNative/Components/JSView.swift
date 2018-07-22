@@ -13,11 +13,11 @@ struct JSViewDescriptor {
     let justifyContent: String?
     let alignItems: String?
     
-    let color: String
+    let backgroundColor: String?
     let children: JSValue?
     
     init(_ jsValue: JSValue) {
-        self.type = toString(jsValue, "type")
+        self.type = toString(jsValue, "type")!
         
         self.x = toFloat(jsValue, "x")
         self.y = toFloat(jsValue, "y")
@@ -28,7 +28,7 @@ struct JSViewDescriptor {
         self.justifyContent = toString(jsValue, "justifyContent")
         self.alignItems = toString(jsValue, "alignItems")
 
-        self.color = toString(jsValue, "color")
+        self.backgroundColor = toString(jsValue, "backgroundColor")
         
         let children = jsValue.forProperty("children")!
         self.children = children.isArray ? children : nil
@@ -38,8 +38,8 @@ struct JSViewDescriptor {
 func createUIView(fromValue descriptor: JSValue, ofType view: UIView = UIView()) -> UIView {
     let desc = JSViewDescriptor(descriptor)
     
-    view.backgroundColor = createUIColor(from: desc.color)
-    
+    view.backgroundColor = createUIColor(from: desc.backgroundColor)
+
     view.flex.justifyContent(createFlexJustifyContent(from: desc.justifyContent))
     view.flex.alignItems(createFlexAlignItems(from: desc.alignItems))
     
