@@ -39,6 +39,16 @@ func createFlexAlignItems(from string: String?) -> Flex.AlignItems {
     }
 }
 
+func createFlexDirection(from string: String?) -> Flex.Direction {
+    switch string {
+    case "column":        return Flex.Direction.column
+    case "row":           return Flex.Direction.row
+    case "columnReverse": return Flex.Direction.columnReverse
+    case "rowReverse":    return Flex.Direction.rowReverse
+    default:              return Flex.Direction.column
+    }
+}
+
 func toFunc(_ value: JSValue, _ propertyName: String) -> () -> Void {
     return { value.forProperty(propertyName).call(withArguments: []) }
 }

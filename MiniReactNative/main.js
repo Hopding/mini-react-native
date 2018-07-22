@@ -37,6 +37,7 @@ class AddCardsScreen {
     this.cardColors = ['red', 'green', 'blue', 'yellow', 'purple'];
 
     this.handleAddCard = this.handleAddCard.bind(this);
+    this.handleRemoveCard = this.handleRemoveCard.bind(this);
     this.renderCards = this.renderCards.bind(this);
 
     this.renderCards();
@@ -53,6 +54,11 @@ class AddCardsScreen {
     this.renderCards();
   }
 
+  handleRemoveCard() {
+    this.cards.pop();
+    this.renderCards();
+  }
+
   renderCards() {
     this.render({
       type: 'View',
@@ -60,10 +66,23 @@ class AddCardsScreen {
       backgroundColor: 'white',
       children: [
         {
-          type: 'Button',
-          title: 'Add Card',
-          color: 'blue',
-          onPress: this.handleAddCard,
+          type: 'View',
+          flexDirection: 'row',
+          justifyContent: 'spaceAround',
+          children: [
+            {
+              type: 'Button',
+              title: 'Add Card',
+              color: 'blue',
+              onPress: this.handleAddCard,
+            },
+            {
+              type: 'Button',
+              title: 'Remove Card',
+              color: 'red',
+              onPress: this.handleRemoveCard,
+            },
+          ],
         },
       ].concat(this.cards),
     });

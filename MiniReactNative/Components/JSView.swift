@@ -12,6 +12,7 @@ struct JSViewDescriptor {
     let flex: CGFloat?
     let justifyContent: String?
     let alignItems: String?
+    let flexDirection: String?
     
     let backgroundColor: String?
     let children: JSValue?
@@ -27,6 +28,7 @@ struct JSViewDescriptor {
         self.flex = toFloat(jsValue, "flex")
         self.justifyContent = toString(jsValue, "justifyContent")
         self.alignItems = toString(jsValue, "alignItems")
+        self.flexDirection = toString(jsValue, "flexDirection")
 
         self.backgroundColor = toString(jsValue, "backgroundColor")
         
@@ -42,6 +44,7 @@ func createUIView(fromValue descriptor: JSValue, ofType view: UIView = UIView())
 
     view.flex.justifyContent(createFlexJustifyContent(from: desc.justifyContent))
     view.flex.alignItems(createFlexAlignItems(from: desc.alignItems))
+    view.flex.direction(createFlexDirection(from: desc.flexDirection))
     
     if let flex = desc.flex {
         view.flex.grow(flex)
