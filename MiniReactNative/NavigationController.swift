@@ -6,6 +6,9 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let x = ViewControllerX()
+//        pushViewController(x, animated: true)
+
         let mainBundleUrl = Bundle.main.url(forResource:"main", withExtension: "js")
 
         do {

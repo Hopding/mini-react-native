@@ -43,6 +43,11 @@ class JSBundleInjector {
         injectObject(ofValue: castedFunc, withName: name)
     }
     
+    func injectGlobal(value: @escaping () -> CGFloat, withName name: String) {
+        let castedFunc: @convention(block) () -> CGFloat = value;
+        injectObject(ofValue: castedFunc, withName: name)
+    }
+    
     func prepForInjection(value: @escaping (JSValue) -> Void) -> AnyObject {
         let castedFunc: @convention(block) (JSValue) -> Void = value;
         return unsafeBitCast(castedFunc, to: AnyObject.self);

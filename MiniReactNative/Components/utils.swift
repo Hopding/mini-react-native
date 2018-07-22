@@ -9,6 +9,7 @@ func createUIColor(from string: String?) -> UIColor {
     case "blue":        return UIColor.blue
     case "red":         return UIColor.red
     case "yellow":      return UIColor.yellow
+    case "orange":      return UIColor.orange
     case "purple":      return UIColor.purple
     case "cyan":        return UIColor.cyan
     case "white":       return UIColor.white
@@ -53,6 +54,10 @@ func toFunc(_ value: JSValue, _ propertyName: String) -> () -> Void {
     return { value.forProperty(propertyName).call(withArguments: []) }
 }
 
+func toFunc2(_ value: JSValue, _ propertyName: String) -> (Int) -> JSValue {
+    return { arg1 in value.forProperty(propertyName).call(withArguments: [arg1]) }
+}
+
 func toInt(_ value: JSValue, _ propertyName: String) -> Int? {
     if let num = value.forProperty(propertyName) {
         return num.isNumber ? Int(num.toInt32()) : nil
@@ -69,7 +74,7 @@ func toFloat(_ value: JSValue, _ propertyName: String) -> CGFloat? {
 
 func toString(_ value: JSValue, _ propertyName: String) -> String? {
     if let str = value.forProperty(propertyName) {
-        return str.isString ? str.toString() : nil
+        return str.toString()
     }
     return nil
 }
