@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		036574DDE365A5E51E44622D /* Pods_MiniReactNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CA10607EEA49E7A954E6B8 /* Pods_MiniReactNative.framework */; };
 		07112F7F20FC2DC300650F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07112F7E20FC2DC300650F12 /* AppDelegate.swift */; };
-		07112F8120FC2DC300650F12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07112F8020FC2DC300650F12 /* ViewController.swift */; };
 		07112F8420FC2DC300650F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8220FC2DC300650F12 /* Main.storyboard */; };
 		07112F8620FC2DC400650F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8520FC2DC400650F12 /* Assets.xcassets */; };
 		07112F8920FC2DC400650F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8720FC2DC400650F12 /* LaunchScreen.storyboard */; };
@@ -22,13 +21,13 @@
 		0738C3F62103EB3100CB2F52 /* FlexRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738C3F52103EB3100CB2F52 /* FlexRootView.swift */; };
 		075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CB20FD4C6D0001654A /* JSBundleHarness.swift */; };
 		075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CE20FD5D640001654A /* JSBundleInjector.swift */; };
-		075399D420FD65690001654A /* ViewDescriptorRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399D320FD65690001654A /* ViewDescriptorRenderer.swift */; };
+		07D3E2412104D8C0008C7F37 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E2402104D8C0008C7F37 /* NavigationController.swift */; };
+		07D3E2432104E153008C7F37 /* JSViewControllerHarness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E2422104E153008C7F37 /* JSViewControllerHarness.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07112F7B20FC2DC300650F12 /* MiniReactNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniReactNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07112F7E20FC2DC300650F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07112F8020FC2DC300650F12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07112F8320FC2DC300650F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07112F8520FC2DC400650F12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07112F8820FC2DC400650F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,7 +41,8 @@
 		0738C3F52103EB3100CB2F52 /* FlexRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexRootView.swift; sourceTree = "<group>"; };
 		075399CB20FD4C6D0001654A /* JSBundleHarness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleHarness.swift; sourceTree = "<group>"; };
 		075399CE20FD5D640001654A /* JSBundleInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleInjector.swift; sourceTree = "<group>"; };
-		075399D320FD65690001654A /* ViewDescriptorRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDescriptorRenderer.swift; sourceTree = "<group>"; };
+		07D3E2402104D8C0008C7F37 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		07D3E2422104E153008C7F37 /* JSViewControllerHarness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSViewControllerHarness.swift; sourceTree = "<group>"; };
 		0B24F996CC8069EAD784D168 /* Pods-MiniReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniReactNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative.release.xcconfig"; sourceTree = "<group>"; };
 		91F1FF34CC08CDF11BDC3713 /* Pods-MiniReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniReactNative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative.debug.xcconfig"; sourceTree = "<group>"; };
 		E6CA10607EEA49E7A954E6B8 /* Pods_MiniReactNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniReactNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,13 +91,12 @@
 			isa = PBXGroup;
 			children = (
 				07363271210010C40023C6E7 /* Components */,
-				075399D220FD65410001654A /* Renderer */,
 				075399CD20FD5D420001654A /* JSBundle */,
-				07112F7E20FC2DC300650F12 /* AppDelegate.swift */,
-				07112F8020FC2DC300650F12 /* ViewController.swift */,
-				07112F8220FC2DC300650F12 /* Main.storyboard */,
+				07D3E2402104D8C0008C7F37 /* NavigationController.swift */,
 				07112F9020FC2FEA00650F12 /* main.js */,
 				07112F8520FC2DC400650F12 /* Assets.xcassets */,
+				07112F7E20FC2DC300650F12 /* AppDelegate.swift */,
+				07112F8220FC2DC300650F12 /* Main.storyboard */,
 				07112F8720FC2DC400650F12 /* LaunchScreen.storyboard */,
 				07112F8A20FC2DC400650F12 /* Info.plist */,
 			);
@@ -107,6 +106,7 @@
 		07363271210010C40023C6E7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0738C3F52103EB3100CB2F52 /* FlexRootView.swift */,
 				07363272210010DF0023C6E7 /* Extensions.swift */,
 				0736327421001A390023C6E7 /* utils.swift */,
 				0736327621001A5A0023C6E7 /* JSButton.swift */,
@@ -119,19 +119,11 @@
 		075399CD20FD5D420001654A /* JSBundle */ = {
 			isa = PBXGroup;
 			children = (
+				07D3E2422104E153008C7F37 /* JSViewControllerHarness.swift */,
 				075399CB20FD4C6D0001654A /* JSBundleHarness.swift */,
 				075399CE20FD5D640001654A /* JSBundleInjector.swift */,
 			);
 			path = JSBundle;
-			sourceTree = "<group>";
-		};
-		075399D220FD65410001654A /* Renderer */ = {
-			isa = PBXGroup;
-			children = (
-				075399D320FD65690001654A /* ViewDescriptorRenderer.swift */,
-				0738C3F52103EB3100CB2F52 /* FlexRootView.swift */,
-			);
-			path = Renderer;
 			sourceTree = "<group>";
 		};
 		31873137585309A092411A90 /* Frameworks */ = {
@@ -255,10 +247,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D3E2432104E153008C7F37 /* JSViewControllerHarness.swift in Sources */,
 				0738C3F62103EB3100CB2F52 /* FlexRootView.swift in Sources */,
-				075399D420FD65690001654A /* ViewDescriptorRenderer.swift in Sources */,
+				07D3E2412104D8C0008C7F37 /* NavigationController.swift in Sources */,
 				0736327921001DC80023C6E7 /* JSView.swift in Sources */,
-				07112F8120FC2DC300650F12 /* ViewController.swift in Sources */,
 				0736327721001A5A0023C6E7 /* JSButton.swift in Sources */,
 				075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */,
 				0736327B21001E910023C6E7 /* JSComponent.swift in Sources */,

@@ -33,6 +33,21 @@ class JSBundleInjector {
         injectObject(ofValue: castedFunc, withName: name)
     }
     
+    func injectGlobal(value: @escaping (JSValue, Int) -> Void, withName name: String) {
+        let castedFunc: @convention(block) (JSValue, Int) -> Void = value;
+        injectObject(ofValue: castedFunc, withName: name)
+    }
+    
+    func injectGlobal(value: @escaping () -> Void, withName name: String) {
+        let castedFunc: @convention(block) () -> Void = value;
+        injectObject(ofValue: castedFunc, withName: name)
+    }
+    
+    func prepForInjection(value: @escaping (JSValue) -> Void) -> AnyObject {
+        let castedFunc: @convention(block) (JSValue) -> Void = value;
+        return unsafeBitCast(castedFunc, to: AnyObject.self);
+    }
+    
     private func injectObject<T>(ofValue value: T, withName name: String) {
         jsContext.setObject(
             unsafeBitCast(value, to: AnyObject.self),

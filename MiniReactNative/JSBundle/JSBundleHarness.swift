@@ -4,18 +4,19 @@ import UIKit
 
 class JSBundleHarness {
     let jsContext: JSContext
-    let rootView: UIView
-    let renderer: ViewDescriptorRenderer
+    let injector: JSBundleInjector
+    let navigationController: UINavigationController
     var jsPressHandler: JSValue? = nil
 
-    init(forBundle jsBundle: String, withRootView rootView: UIView) {
+    init(forBundle jsBundle: String, withNavigationController navigationController: UINavigationController) {
         self.jsContext = JSContext()!
-        self.rootView = rootView
-        self.renderer = ViewDescriptorRenderer(rootView: rootView)
+        self.navigationController = navigationController
+        self.injector = JSBundleInjector(for: jsContext)
 
-        let injector = JSBundleInjector(for: jsContext)
-        injector.injectGlobal(value: self.jsLog, withName: "log")
-        injector.injectGlobal(value: self.render, withName: "render")
+        injector.injectGlobal(value: self.log, withName: "log")
+        injector.injectGlobal(value: self.setTimeout, withName: "setTimeout")
+        injector.injectGlobal(value: self.navigate, withName: "navigate")
+        injector.injectGlobal(value: self.navigateBack, withName: "navigateBack")
 
         jsContext.exceptionHandler = self.handleJSException;
         jsContext.evaluateScript(jsBundle)
@@ -25,11 +26,24 @@ class JSBundleHarness {
         print("JS Error: \(String(describing: exception! ))")
     }
 
-    func jsLog(input: String) {
+    func log(input: String) {
         print(input)
     }
-
-    func render(viewDescriptor: JSValue) {
-        renderer.render(viewDescriptor)
+    
+    func setTimeout(input: JSValue, timeoutMillis: Int) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(timeoutMillis / 1000)) {
+            input.call(withArguments: [])
+        }
+    }
+    
+    func navigate(viewControllerDescriptor: JSValue) {
+        let jsVCHarness = JSViewControllerHarness()
+        let injectionReadyRender = injector.prepForInjection(value: jsVCHarness.render)
+        let _ = viewControllerDescriptor.construct(withArguments: [injectionReadyRender])
+        navigationController.pushViewController(jsVCHarness.viewController, animated: true)
+    }
+    
+    func navigateBack() {
+        navigationController.popViewController(animated: true)
     }
 }
