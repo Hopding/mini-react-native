@@ -10,6 +10,8 @@ struct JSViewDescriptor {
     let height: CGFloat?
     
     let flex: CGFloat?
+    let justifyContent: String?
+    let alignItems: String?
     
     let color: String
     let children: JSValue?
@@ -23,7 +25,9 @@ struct JSViewDescriptor {
         self.height = toFloat(jsValue, "height")
         
         self.flex = toFloat(jsValue, "flex")
-        
+        self.justifyContent = toString(jsValue, "justifyContent")
+        self.alignItems = toString(jsValue, "alignItems")
+
         self.color = toString(jsValue, "color")
         
         let children = jsValue.forProperty("children")!
@@ -31,10 +35,13 @@ struct JSViewDescriptor {
     }
 }
 
-func createUIView(fromValue descriptor: JSValue) -> UIView {
+func createUIView(fromValue descriptor: JSValue, ofType view: UIView = UIView()) -> UIView {
     let desc = JSViewDescriptor(descriptor)
-    let view = UIView()
+    
     view.backgroundColor = createUIColor(from: desc.color)
+    
+    view.flex.justifyContent(createFlexJustifyContent(from: desc.justifyContent))
+    view.flex.alignItems(createFlexAlignItems(from: desc.alignItems))
     
     if let flex = desc.flex {
         view.flex.grow(flex)

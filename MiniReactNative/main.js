@@ -55,27 +55,43 @@ const colorMap = {
 render([
   {
     type: 'View',
-    // width: 150,
-    // height: 150,
     flex: 1,
     color: 'black',
     children: [
       {
         type: 'View',
-        width: 25,
-        height: 25,
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        // width: 1,
+        height: 1,
         color: 'purple',
+        children: [
+          {
+            type: 'Button',
+            color: 'red',
+            width: 100,
+            height: 25,
+            // flex: 1,
+            title: 'Press Me!',
+            onPress: () => {
+              log('Tee hee, that tickles!');
+            },
+          },
+        ],
       },
       {
         type: 'View',
-        width: 50,
-        height: 50,
+        flex: 1,
+        // width: 1,
+        height: 1,
         color: 'green',
       },
       {
         type: 'View',
-        width: 75,
-        height: 75,
+        flex: 1,
+        // width: 1,
+        height: 1,
         color: 'blue',
       },
     ],

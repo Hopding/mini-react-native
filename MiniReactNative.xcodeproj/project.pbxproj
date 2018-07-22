@@ -19,8 +19,7 @@
 		0736327721001A5A0023C6E7 /* JSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327621001A5A0023C6E7 /* JSButton.swift */; };
 		0736327921001DC80023C6E7 /* JSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327821001DC80023C6E7 /* JSView.swift */; };
 		0736327B21001E910023C6E7 /* JSComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327A21001E910023C6E7 /* JSComponent.swift */; };
-		0736327D210023090023C6E7 /* FlexTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327C210023090023C6E7 /* FlexTest.swift */; };
-		0738C3F62103EB3100CB2F52 /* FlexRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738C3F52103EB3100CB2F52 /* FlexRoot.swift */; };
+		0738C3F62103EB3100CB2F52 /* FlexRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738C3F52103EB3100CB2F52 /* FlexRootView.swift */; };
 		075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CB20FD4C6D0001654A /* JSBundleHarness.swift */; };
 		075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399CE20FD5D640001654A /* JSBundleInjector.swift */; };
 		075399D420FD65690001654A /* ViewDescriptorRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075399D320FD65690001654A /* ViewDescriptorRenderer.swift */; };
@@ -40,8 +39,7 @@
 		0736327621001A5A0023C6E7 /* JSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSButton.swift; sourceTree = "<group>"; };
 		0736327821001DC80023C6E7 /* JSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSView.swift; sourceTree = "<group>"; };
 		0736327A21001E910023C6E7 /* JSComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSComponent.swift; sourceTree = "<group>"; };
-		0736327C210023090023C6E7 /* FlexTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexTest.swift; sourceTree = "<group>"; };
-		0738C3F52103EB3100CB2F52 /* FlexRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexRoot.swift; sourceTree = "<group>"; };
+		0738C3F52103EB3100CB2F52 /* FlexRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexRootView.swift; sourceTree = "<group>"; };
 		075399CB20FD4C6D0001654A /* JSBundleHarness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleHarness.swift; sourceTree = "<group>"; };
 		075399CE20FD5D640001654A /* JSBundleInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleInjector.swift; sourceTree = "<group>"; };
 		075399D320FD65690001654A /* ViewDescriptorRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDescriptorRenderer.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				07112F8520FC2DC400650F12 /* Assets.xcassets */,
 				07112F8720FC2DC400650F12 /* LaunchScreen.storyboard */,
 				07112F8A20FC2DC400650F12 /* Info.plist */,
-				0736327C210023090023C6E7 /* FlexTest.swift */,
 			);
 			path = MiniReactNative;
 			sourceTree = "<group>";
@@ -132,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				075399D320FD65690001654A /* ViewDescriptorRenderer.swift */,
-				0738C3F52103EB3100CB2F52 /* FlexRoot.swift */,
+				0738C3F52103EB3100CB2F52 /* FlexRootView.swift */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -258,10 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0738C3F62103EB3100CB2F52 /* FlexRoot.swift in Sources */,
+				0738C3F62103EB3100CB2F52 /* FlexRootView.swift in Sources */,
 				075399D420FD65690001654A /* ViewDescriptorRenderer.swift in Sources */,
 				0736327921001DC80023C6E7 /* JSView.swift in Sources */,
-				0736327D210023090023C6E7 /* FlexTest.swift in Sources */,
 				07112F8120FC2DC300650F12 /* ViewController.swift in Sources */,
 				0736327721001A5A0023C6E7 /* JSButton.swift in Sources */,
 				075399CC20FD4C6D0001654A /* JSBundleHarness.swift in Sources */,

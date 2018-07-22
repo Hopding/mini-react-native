@@ -1,5 +1,6 @@
 import UIKit
 import JavaScriptCore
+import FlexLayout
 
 func createUIColor(from string: String?) -> UIColor {
     switch string {
@@ -8,6 +9,28 @@ func createUIColor(from string: String?) -> UIColor {
     case "red":     return UIColor.red
     case "purple":  return UIColor.purple
     default:        return UIColor.black
+    }
+}
+
+func createFlexJustifyContent(from string: String?) -> Flex.JustifyContent {
+    switch string {
+    case "center":       return Flex.JustifyContent.center
+    case "end":          return Flex.JustifyContent.end
+    case "spaceAround":  return Flex.JustifyContent.spaceAround
+    case "spaceBetween": return Flex.JustifyContent.spaceBetween
+    case "spaceEvenly":  return Flex.JustifyContent.spaceEvenly
+    case "start":        return Flex.JustifyContent.start
+    default:             return Flex.JustifyContent.start
+    }
+}
+
+func createFlexAlignItems(from string: String?) -> Flex.AlignItems {
+    switch string {
+    case "center":  return Flex.AlignItems.center
+    case "end":     return Flex.AlignItems.end
+    case "stretch": return Flex.AlignItems.stretch
+    case "start":   return Flex.AlignItems.start
+    default:        return Flex.AlignItems.stretch
     }
 }
 

@@ -6,15 +6,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let x = FlexRoot()
+        let flexRoot = FlexRootView()
         
-        self.view.addSubview(x)
+        self.view.addSubview(flexRoot)
 
         let mainBundleUrl = Bundle.main.url(forResource:"main", withExtension: "js")
 
         do {
             let mainBundle = try String.init(contentsOf: mainBundleUrl!)
-            let harness = JSBundleHarness(forBundle: mainBundle, withRootView: x)
+            let harness = JSBundleHarness(forBundle: mainBundle, withRootView: flexRoot)
         } catch {
             print("Failed to load main bundle!")
         }

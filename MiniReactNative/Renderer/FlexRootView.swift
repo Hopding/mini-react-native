@@ -1,7 +1,7 @@
 import UIKit
 import FlexLayout
 
-class FlexRoot: UIView {
+class FlexRootView: UIView {
     init() {
         super.init(frame: .zero)
         self.backgroundColor = UIColor.darkGray
