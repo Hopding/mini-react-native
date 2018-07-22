@@ -8,6 +8,7 @@ func createUIColor(from string: String?) -> UIColor {
     case "green":       return UIColor.green
     case "blue":        return UIColor.blue
     case "red":         return UIColor.red
+    case "yellow":      return UIColor.yellow
     case "purple":      return UIColor.purple
     case "cyan":        return UIColor.cyan
     case "white":       return UIColor.white

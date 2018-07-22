@@ -2,82 +2,72 @@ const global = Function('return this')();
 
 log(Object.keys(global));
 
-class NavigationCard {
+class InitialScreen {
   constructor(render) {
     this.render = render;
-    this.handleChange = this.handleChange.bind(this);
-
     render({
       type: 'View',
       flex: 1,
-      height: 1,
+      backgroundColor: 'white',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'blue',
       children: [
         {
           type: 'Text',
-          backgroundColor: 'transparent',
-          color: 'red',
+          text: 'Welcome!',
+          color: 'black',
           fontSize: 50,
-          text: 'This is a test...',
         },
         {
           type: 'Button',
-          title: 'Add Red Card!',
-          color: 'cyan',
-          width: 100,
-          height: 50,
-          onPress: this.handleChange,
-        },
-      ],
-    });
-  }
-
-  handleChange() {
-    log(Object.keys(this));
-
-    this.render({
-      type: 'View',
-      flex: 1,
-      children: [
-        {
-          type: 'View',
-          flex: 1,
-          height: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'blue',
-          children: [
-            {
-              type: 'Button',
-              backgroundColor: 'green',
-              title: 'Add Red Card!',
-              width: 100,
-              height: 50,
-              onPress: this.handleChange,
-            },
-            {
-              type: 'Button',
-              backgroundColor: 'purple',
-              title: 'Go Back',
-              width: 100,
-              height: 50,
-              onPress: navigateBack,
-            },
-          ],
-        },
-        {
-          type: 'View',
-          flex: 1,
-          backgroundColor: 'red',
+          title: 'Next Screen',
+          color: 'blue',
+          onPress: () => navigate(AddCardsScreen),
         },
       ],
     });
   }
 }
 
-navigate(NavigationCard);
-setTimeout(() => {
-  navigate(NavigationCard);
-}, 1000);
+class AddCardsScreen {
+  constructor(render) {
+    this.render = render;
+
+    this.cards = [];
+    this.cardColors = ['red', 'green', 'blue', 'yellow', 'purple'];
+
+    this.handleAddCard = this.handleAddCard.bind(this);
+    this.renderCards = this.renderCards.bind(this);
+
+    this.renderCards();
+  }
+
+  handleAddCard() {
+    const numCards = this.cards.length;
+    this.cards.push({
+      type: 'View',
+      flex: 1,
+      height: 1,
+      backgroundColor: this.cardColors[(numCards + 1) % this.cardColors.length],
+    });
+    this.renderCards();
+  }
+
+  renderCards() {
+    this.render({
+      type: 'View',
+      flex: 1,
+      backgroundColor: 'white',
+      children: [
+        {
+          type: 'Button',
+          title: 'Add Card',
+          color: 'blue',
+          onPress: this.handleAddCard,
+        },
+      ].concat(this.cards),
+    });
+  }
+}
+
+navigate(InitialScreen);

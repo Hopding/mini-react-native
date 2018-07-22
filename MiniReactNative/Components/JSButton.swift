@@ -8,7 +8,7 @@ struct JSButtonDescriptor {
     
     init(_ jsValue: JSValue) {
         self.title = toString(jsValue, "title") ?? ""
-        self.color = toString(jsValue, "color") ?? "white"
+        self.color = toString(jsValue, "color") ?? "black"
         self.onPress = toFunc(jsValue, "onPress")
     }
 }
