@@ -2,6 +2,24 @@ const global = Function('return this')();
 
 log(Object.keys(global));
 
+fetch = (url, config) =>
+  new Promise((resolve, reject) => {
+    makeHttpRequest({
+      url: url,
+      method: (config || {}).method || 'GET',
+      callback: response => {
+        if (response.statusCode === 200) {
+          resolve(response);
+        } else {
+          reject(response);
+        }
+      },
+    });
+  });
+
+fetchJson = (url, config) =>
+  fetch(url, config).then(({ data }) => JSON.parse(data));
+
 class InitialScreen {
   constructor(render) {
     this.render = render;
@@ -29,6 +47,12 @@ class InitialScreen {
           title: 'Collection View Screen',
           color: 'blue',
           onPress: () => navigate(CollectionViewScreen),
+        },
+        {
+          type: 'Button',
+          title: 'GitHub Data Screen',
+          color: 'blue',
+          onPress: () => navigate(GitHubScreen),
         },
       ],
     });
@@ -157,6 +181,39 @@ class CollectionViewScreen {
           }),
         },
       ],
+    });
+  }
+}
+
+class GitHubScreen {
+  constructor(render) {
+    this.render = render;
+
+    this.handleJson = this.handleJson.bind(this);
+
+    this.render({
+      type: 'View',
+      flex: 1,
+      backgroundColor: 'white',
+    });
+
+    fetchJson('https://jsonplaceholder.typicode.com/todos/1').then(
+      this.handleJson,
+    );
+  }
+
+  handleJson(json) {
+    this.render({
+      type: 'View',
+      flex: 1,
+      backgroundColor: 'white',
+      justifyContent: 'center',
+      alignItems: 'center',
+      children: Object.entries(json).map(([key, val]) => ({
+        type: 'Text',
+        text: `Key: ${key}\nValue: ${val}`,
+        color: 'black',
+      })),
     });
   }
 }

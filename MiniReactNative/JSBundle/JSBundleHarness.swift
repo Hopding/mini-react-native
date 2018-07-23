@@ -21,6 +21,7 @@ class JSBundleHarness {
         injector.injectGlobal(value: self.screenWidth, withName: "screenWidth")
         injector.injectGlobal(value: self.screenHeight, withName: "screenHeight")
         injector.injectGlobal(value: self.addOrientationChangeListener, withName: "addOrientationChangeListener")
+        injector.injectGlobal(value: self.makeHttpRequest, withName: "makeHttpRequest")
 
         jsContext.exceptionHandler = self.handleJSException;
         jsContext.evaluateScript(jsBundle)
@@ -57,6 +58,29 @@ class JSBundleHarness {
         DispatchQueue.main.asyncAfter(deadline: .now() + Double(timeoutMillis / 1000)) {
             input.call(withArguments: [])
         }
+    }
+    
+    func makeHttpRequest(config: JSValue) {
+        let url      = config.forProperty("url").toString()!
+        let method   = config.forProperty("method").toString().uppercased()
+        let callback = config.forProperty("callback")
+
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = method
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        
+        session.dataTask(with: request, completionHandler: { data, response,  error in
+            if let httpResponse = response as? HTTPURLResponse {
+                let decodedData = String(data: data!, encoding: String.Encoding.utf8)!
+                let res: [String: Any] = [
+                    "data": decodedData,
+                    "statusCode": httpResponse.statusCode,
+                ]
+                DispatchQueue.main.async {
+                    let _ = callback?.call(withArguments: [res])
+                }
+            }
+        }).resume()
     }
     
     func screenWidth() -> CGFloat {
