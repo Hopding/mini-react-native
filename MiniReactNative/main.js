@@ -155,10 +155,10 @@ class CollectionViewScreen {
           flex: 1,
           itemsPerSection: this.itemsPerSection,
           sectionInsets: {
-            top: 10,
-            bottom: 10,
-            left: 10,
-            right: 10,
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
           },
           itemSize: {
             width: screenWidth(),
@@ -197,23 +197,63 @@ class GitHubScreen {
       backgroundColor: 'white',
     });
 
-    fetchJson('https://jsonplaceholder.typicode.com/todos/1').then(
-      this.handleJson,
-    );
+    this.keys = [
+      'login',
+      'id',
+      'type',
+      'company',
+      'blog',
+      'location',
+      'email',
+      'bio',
+    ];
+
+    fetchJson('https://api.github.com/users/octocat').then(this.handleJson);
   }
 
   handleJson(json) {
+    const entries = this.keys.map(key => [key, json[key]]);
     this.render({
       type: 'View',
       flex: 1,
       backgroundColor: 'white',
-      justifyContent: 'center',
-      alignItems: 'center',
-      children: Object.entries(json).map(([key, val]) => ({
-        type: 'Text',
-        text: `Key: ${key}\nValue: ${val}`,
-        color: 'black',
-      })),
+      children: [
+        {
+          type: 'CollectionView',
+          flex: 1,
+          backgroundColor: 'white',
+          itemsPerSection: entries.length,
+          sectionInsets: {
+            top: 10,
+            bottom: 10,
+            left: 10,
+            right: 10,
+          },
+          itemSize: {
+            width: screenWidth(),
+            height: 75,
+          },
+          renderItem: cellIndex => ({
+            type: 'View',
+            flex: 1,
+            backgroundColor: 'lightGray',
+            children: [
+              {
+                type: 'Text',
+                text: entries[cellIndex][0],
+                color: 'black',
+                fontSize: 15,
+              },
+              {
+                type: 'Text',
+                text: entries[cellIndex][1],
+                color: 'black',
+                fontSize: 20,
+              },
+            ],
+          }),
+        },
+      ],
     });
   }
 }

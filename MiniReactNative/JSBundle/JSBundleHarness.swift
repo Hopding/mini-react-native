@@ -67,9 +67,8 @@ class JSBundleHarness {
 
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = method
-        let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        session.dataTask(with: request, completionHandler: { data, response,  error in
+        URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             if let httpResponse = response as? HTTPURLResponse {
                 let decodedData = String(data: data!, encoding: String.Encoding.utf8)!
                 let res: [String: Any] = [

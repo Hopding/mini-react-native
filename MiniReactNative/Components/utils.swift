@@ -13,6 +13,7 @@ func createUIColor(from string: String?) -> UIColor {
     case "purple":      return UIColor.purple
     case "cyan":        return UIColor.cyan
     case "white":       return UIColor.white
+    case "lightGray":   return UIColor.lightGray
     case "black":       return UIColor.black
     default:            return UIColor(white: 1, alpha: 0.0)
     }
