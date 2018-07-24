@@ -10,6 +10,7 @@ class CollectionView: UICollectionView, UICollectionViewDelegateFlowLayout, UICo
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = desc.sectionInsets
         layout.itemSize = desc.itemSize
+        layout.minimumLineSpacing = desc.minimumLineSpacing
 
         super.init(frame: .zero, collectionViewLayout: layout)
         
@@ -39,12 +40,14 @@ class CollectionView: UICollectionView, UICollectionViewDelegateFlowLayout, UICo
 
 struct JSCollectionViewDescriptor {
     let itemsPerSection: Int
+    let minimumLineSpacing: CGFloat
     let renderItem: (Int) -> JSValue
     let sectionInsets: UIEdgeInsets
     let itemSize: CGSize
 
     init(_ jsValue: JSValue) {
         self.itemsPerSection = toInt(jsValue, "itemsPerSection") ?? 1
+        self.minimumLineSpacing = toFloat(jsValue, "minimumLineSpacing") ?? 0
         self.sectionInsets = UIEdgeInsets(
             top: CGFloat(jsValue.forProperty("sectionInsets").forProperty("top").toDouble()),
             left: CGFloat(jsValue.forProperty("sectionInsets").forProperty("left").toDouble()),

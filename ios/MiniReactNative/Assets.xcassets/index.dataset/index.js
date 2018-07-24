@@ -155,6 +155,7 @@ class CollectionViewScreen {
           type: 'CollectionView',
           flex: 1,
           itemsPerSection: this.itemsPerSection,
+          minimumLineSpacing: 2,
           sectionInsets: {
             top: 0,
             bottom: 0,

@@ -12,7 +12,7 @@
 		07112F8420FC2DC300650F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8220FC2DC300650F12 /* Main.storyboard */; };
 		07112F8620FC2DC400650F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8520FC2DC400650F12 /* Assets.xcassets */; };
 		07112F8920FC2DC400650F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07112F8720FC2DC400650F12 /* LaunchScreen.storyboard */; };
-		07112F9120FC2FEA00650F12 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 07112F9020FC2FEA00650F12 /* main.js */; };
+		07112F9120FC2FEA00650F12 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 07112F9020FC2FEA00650F12 /* index.js */; };
 		07363273210010DF0023C6E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07363272210010DF0023C6E7 /* Extensions.swift */; };
 		0736327521001A390023C6E7 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327421001A390023C6E7 /* utils.swift */; };
 		0736327721001A5A0023C6E7 /* JSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736327621001A5A0023C6E7 /* JSButton.swift */; };
@@ -35,7 +35,7 @@
 		07112F8520FC2DC400650F12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07112F8820FC2DC400650F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07112F8A20FC2DC400650F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07112F9020FC2FEA00650F12 /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		07112F9020FC2FEA00650F12 /* index.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		07363272210010DF0023C6E7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0736327421001A390023C6E7 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		0736327621001A5A0023C6E7 /* JSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSButton.swift; sourceTree = "<group>"; };
@@ -99,8 +99,8 @@
 				07363271210010C40023C6E7 /* Components */,
 				075399CD20FD5D420001654A /* JSBundle */,
 				07D3E2402104D8C0008C7F37 /* NavigationController.swift */,
-				07112F9020FC2FEA00650F12 /* main.js */,
 				07112F8520FC2DC400650F12 /* Assets.xcassets */,
+				07112F9020FC2FEA00650F12 /* index.js */,
 				07112F7E20FC2DC300650F12 /* AppDelegate.swift */,
 				07112F8220FC2DC300650F12 /* Main.storyboard */,
 				07112F8720FC2DC400650F12 /* LaunchScreen.storyboard */,
@@ -206,7 +206,7 @@
 				07112F8920FC2DC400650F12 /* LaunchScreen.storyboard in Resources */,
 				07112F8620FC2DC400650F12 /* Assets.xcassets in Resources */,
 				07112F8420FC2DC300650F12 /* Main.storyboard in Resources */,
-				07112F9120FC2FEA00650F12 /* main.js in Resources */,
+				07112F9120FC2FEA00650F12 /* index.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

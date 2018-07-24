@@ -1,0 +1,16 @@
+{
+  "name": "mini-react-native",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./run-metro.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "babel-preset-env": "^1.7.0",
+    "metro": "^0.42.2",
+    "metro-core": "^0.42.2"
+  }
+}
