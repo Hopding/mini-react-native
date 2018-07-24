@@ -94,8 +94,8 @@ class JSBundleHarness {
         self.orientationChangeListeners.append(listener)
     }
     
-    func navigate(viewControllerDescriptor: JSValue) {
-        let jsVCHarness = JSViewControllerHarness()
+    func navigate(viewControllerDescriptor: JSValue, title: JSValue) {
+        let jsVCHarness = JSViewControllerHarness(withTitle: title.isString ? title.toString() : "")
         let injectionReadyRender = injector.prepForInjection(value: jsVCHarness.render)
         let _ = viewControllerDescriptor.construct(withArguments: [injectionReadyRender])
         navigationController.pushViewController(jsVCHarness.viewController, animated: true)

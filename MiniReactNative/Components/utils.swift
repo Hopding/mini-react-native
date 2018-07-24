@@ -91,6 +91,9 @@ func toFloat(_ value: JSValue, _ propertyName: String) -> CGFloat? {
 
 func toString(_ value: JSValue, _ propertyName: String) -> String? {
     if let str = value.forProperty(propertyName) {
+        if (str.isUndefined || str.isNull) {
+            return nil
+        }
         return str.toString()
     }
     return nil

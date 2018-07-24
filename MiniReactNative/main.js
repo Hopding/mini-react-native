@@ -40,19 +40,20 @@ class InitialScreen {
           type: 'Button',
           title: 'Next Screen',
           color: 'blue',
-          onPress: () => navigate(AddCardsScreen),
+          onPress: () => navigate(AddCardsScreen, 'Add Cards'),
         },
         {
           type: 'Button',
           title: 'Collection View Screen',
           color: 'blue',
-          onPress: () => navigate(CollectionViewScreen),
+          onPress: () =>
+            navigate(CollectionViewScreen, 'Collection View Screen'),
         },
         {
           type: 'Button',
           title: 'GitHub Data Screen',
           color: 'blue',
-          onPress: () => navigate(GitHubScreen),
+          onPress: () => navigate(GitHubScreen, 'GitHub User Search'),
         },
       ],
     });
@@ -200,18 +201,13 @@ class GitHubScreen {
       children: [
         {
           type: 'Text',
-          text: 'GitHub Search Tool',
-          fontSize: 30,
-          color: 'black',
-        },
-        {
-          type: 'Text',
           text: 'Enter a username and press Search.',
           fontSize: 20,
           color: 'black',
         },
         {
           type: 'TextField',
+          placeholder: 'Enter Username',
           width: 175,
           height: 40,
           borderColor: 'gray',
@@ -252,6 +248,8 @@ class GitHubScreen {
     ];
 
     this.render(this.topSectionView);
+
+    // addOrientationChangeListener(this.renderCards);
   }
 
   handleJson(json) {
@@ -303,4 +301,4 @@ class GitHubScreen {
   }
 }
 
-navigate(InitialScreen);
+navigate(InitialScreen, 'Home Screen');

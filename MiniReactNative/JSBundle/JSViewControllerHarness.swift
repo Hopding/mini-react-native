@@ -5,8 +5,9 @@ class JSViewControllerHarness {
     let viewController: UIViewController = UIViewController()
     let rootView: UIView
     
-    init() {
+    init(withTitle: String = "") {
         self.rootView = FlexRootView()
+        self.viewController.title = withTitle
         self.viewController.view.addSubview(rootView)
     }
     

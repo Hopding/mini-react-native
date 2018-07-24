@@ -18,6 +18,7 @@ func createUITextView(fromValue descriptor: JSValue) -> UITextView {
     
     let textView: UITextView = createUIView(fromValue: descriptor, ofType: UITextView()) as! UITextView
     
+    textView.isEditable = false
     textView.text = desc.text
     textView.font = UIFont.systemFont(ofSize: desc.fontSize)
     textView.textColor = createUIColor(from: desc.color)

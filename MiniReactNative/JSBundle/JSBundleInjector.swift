@@ -28,6 +28,11 @@ class JSBundleInjector {
         injectObject(ofValue: castedFunc, withName: name)
     }
     
+    func injectGlobal(value: @escaping (JSValue, JSValue) -> Void, withName name: String) {
+        let castedFunc: @convention(block) (JSValue, JSValue) -> Void = value;
+        injectObject(ofValue: castedFunc, withName: name)
+    }
+    
     func injectGlobal(value: @escaping (JSValue) -> Void, withName name: String) {
         let castedFunc: @convention(block) (JSValue) -> Void = value;
         injectObject(ofValue: castedFunc, withName: name)
