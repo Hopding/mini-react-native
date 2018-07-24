@@ -191,11 +191,54 @@ class GitHubScreen {
 
     this.handleJson = this.handleJson.bind(this);
 
-    this.render({
+    this.inputText = '';
+
+    this.topSectionView = {
       type: 'View',
-      flex: 1,
+      alignItems: 'center',
       backgroundColor: 'white',
-    });
+      children: [
+        {
+          type: 'Text',
+          text: 'GitHub Search Tool',
+          fontSize: 30,
+          color: 'black',
+        },
+        {
+          type: 'Text',
+          text: 'Enter a username and press Search.',
+          fontSize: 20,
+          color: 'black',
+        },
+        {
+          type: 'TextField',
+          width: 175,
+          height: 40,
+          borderColor: 'gray',
+          borderWidth: 1,
+          borderRadius: 5,
+          onPress: newText => {
+            this.inputText = newText;
+          },
+        },
+        {
+          type: 'Button',
+          color: 'blue',
+          title: 'Search',
+          borderColor: 'blue',
+          borderWidth: 1,
+          borderRadius: 5,
+          margin: 15,
+          paddingLeft: 25,
+          paddingRight: 25,
+          onPress: () => {
+            fetchJson(`https://api.github.com/users/${this.inputText}`).then(
+              this.handleJson,
+            );
+          },
+        },
+      ],
+    };
 
     this.keys = [
       'login',
@@ -208,16 +251,18 @@ class GitHubScreen {
       'bio',
     ];
 
-    fetchJson('https://api.github.com/users/octocat').then(this.handleJson);
+    this.render(this.topSectionView);
   }
 
   handleJson(json) {
+    this.inputText = '';
     const entries = this.keys.map(key => [key, json[key]]);
     this.render({
       type: 'View',
       flex: 1,
       backgroundColor: 'white',
       children: [
+        this.topSectionView,
         {
           type: 'CollectionView',
           flex: 1,
@@ -236,7 +281,7 @@ class GitHubScreen {
           renderItem: cellIndex => ({
             type: 'View',
             flex: 1,
-            backgroundColor: 'lightGray',
+            backgroundColor: 'white',
             children: [
               {
                 type: 'Text',

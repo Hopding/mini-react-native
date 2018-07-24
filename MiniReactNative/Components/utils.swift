@@ -3,7 +3,7 @@ import JavaScriptCore
 import FlexLayout
 
 func createUIColor(from string: String?) -> UIColor {
-    switch string {
+    switch string?.lowercased() {
     case "transparent": return UIColor(white: 1, alpha: 0.0)
     case "green":       return UIColor.green
     case "blue":        return UIColor.blue
@@ -14,6 +14,7 @@ func createUIColor(from string: String?) -> UIColor {
     case "cyan":        return UIColor.cyan
     case "white":       return UIColor.white
     case "lightGray":   return UIColor.lightGray
+    case "gray":   return UIColor.gray
     case "black":       return UIColor.black
     default:            return UIColor(white: 1, alpha: 0.0)
     }
@@ -51,11 +52,26 @@ func createFlexDirection(from string: String?) -> Flex.Direction {
     }
 }
 
+func createNSTextAlignment(from string: String?) -> NSTextAlignment {
+    switch string?.lowercased() {
+    case "center":    return NSTextAlignment.center
+    case "justified": return NSTextAlignment.justified
+    case "left":      return NSTextAlignment.left
+    case "natural":   return NSTextAlignment.natural
+    case "right":     return NSTextAlignment.right
+    default:          return NSTextAlignment.center
+    }
+}
+
 func toFunc(_ value: JSValue, _ propertyName: String) -> () -> Void {
     return { value.forProperty(propertyName).call(withArguments: []) }
 }
 
 func toFunc2(_ value: JSValue, _ propertyName: String) -> (Int) -> JSValue {
+    return { arg1 in value.forProperty(propertyName).call(withArguments: [arg1]) }
+}
+
+func toFunc3(_ value: JSValue, _ propertyName: String) -> (String) -> Void {
     return { arg1 in value.forProperty(propertyName).call(withArguments: [arg1]) }
 }
 
@@ -76,6 +92,13 @@ func toFloat(_ value: JSValue, _ propertyName: String) -> CGFloat? {
 func toString(_ value: JSValue, _ propertyName: String) -> String? {
     if let str = value.forProperty(propertyName) {
         return str.toString()
+    }
+    return nil
+}
+
+func toBool(_ value: JSValue, _ propertyName: String) -> Bool? {
+    if let bool = value.forProperty(propertyName) {
+        return bool.toBool()
     }
     return nil
 }
