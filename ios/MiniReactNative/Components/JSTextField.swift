@@ -6,14 +6,14 @@ struct JSTextFieldDescriptor {
     let textAlignment: String?
     let autocorrect: Bool
     let autocapitalize: Bool
-    let onPress: (String) -> Void
+    let onChangeText: (String) -> Void
     
     init(_ jsValue: JSValue) {
         self.placeholder = toString(jsValue, "placeholder") ?? ""
         self.textAlignment = toString(jsValue, "textAlignment")
         self.autocorrect = toBool(jsValue, "autocorrect") ?? false
         self.autocapitalize = toBool(jsValue, "autocapitalize") ?? false
-        self.onPress = toFunc3(jsValue, "onPress")
+        self.onChangeText = toFunc3(jsValue, "onChangeText")
     }
 }
 
@@ -27,7 +27,7 @@ func createUITextField(fromValue descriptor: JSValue) -> UITextField {
     textField.autocorrectionType = desc.autocorrect ? UITextAutocorrectionType.yes : UITextAutocorrectionType.no
     textField.autocapitalizationType = desc.autocapitalize ? UITextAutocapitalizationType.sentences : UITextAutocapitalizationType.none
     textField.addTargetClosure { (targetField: UITextField) in
-        desc.onPress(targetField.text ?? "")
+        desc.onChangeText(targetField.text ?? "")
     }
 
     return textField

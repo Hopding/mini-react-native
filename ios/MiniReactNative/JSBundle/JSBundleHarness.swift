@@ -97,7 +97,8 @@ class JSBundleHarness {
     func navigate(viewControllerDescriptor: JSValue, title: JSValue) {
         let jsVCHarness = JSViewControllerHarness(withTitle: title.isString ? title.toString() : "")
         let injectionReadyRender = injector.prepForInjection(value: jsVCHarness.render)
-        let _ = viewControllerDescriptor.construct(withArguments: [injectionReadyRender])
+        let vcd = viewControllerDescriptor.construct(withArguments: [injectionReadyRender])
+        _ = vcd?.forProperty("rerender").call(withArguments: [])
         navigationController.pushViewController(jsVCHarness.viewController, animated: true)
     }
     

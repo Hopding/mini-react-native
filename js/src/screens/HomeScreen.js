@@ -1,11 +1,12 @@
+import Component from '../core/Component';
+
 import AddCardsScreen from './AddCardsScreen';
 import CollectionViewScreen from './CollectionViewScreen';
 import GitHubScreen from './GitHubScreen';
 
-class HomeScreen {
-  constructor(render) {
-    this.render = render;
-    render({
+class HomeScreen extends Component {
+  render = () => {
+    return {
       type: 'View',
       flex: 1,
       backgroundColor: 'white',
@@ -37,8 +38,8 @@ class HomeScreen {
           onPress: () => navigate(GitHubScreen, 'GitHub User Search'),
         },
       ],
-    });
-  }
+    };
+  };
 }
 
 export default HomeScreen;

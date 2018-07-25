@@ -1,4 +1,4 @@
 import './initGlobals';
-import HomeScreen from './HomeScreen';
+import HomeScreen from './screens/HomeScreen';
 
 navigate(HomeScreen, 'Home');

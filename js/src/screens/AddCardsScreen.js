@@ -1,18 +1,10 @@
-class AddCardsScreen {
-  constructor(render) {
-    this.render = render;
+import Component from '../core/Component';
 
-    this.cards = [];
-    this.cardColors = ['red', 'green', 'blue', 'yellow', 'purple'];
+class AddCardsScreen extends Component {
+  cards = [];
+  cardColors = ['red', 'green', 'blue', 'yellow', 'purple'];
 
-    this.handleAddCard = this.handleAddCard.bind(this);
-    this.handleRemoveCard = this.handleRemoveCard.bind(this);
-    this.renderCards = this.renderCards.bind(this);
-
-    this.renderCards();
-  }
-
-  handleAddCard() {
+  handleAddCard = () => {
     const numCards = this.cards.length;
     this.cards.push({
       type: 'View',
@@ -20,16 +12,16 @@ class AddCardsScreen {
       height: 1,
       backgroundColor: this.cardColors[(numCards + 1) % this.cardColors.length],
     });
-    this.renderCards();
-  }
+    this.rerender();
+  };
 
-  handleRemoveCard() {
+  handleRemoveCard = () => {
     this.cards.pop();
-    this.renderCards();
-  }
+    this.rerender();
+  };
 
-  renderCards() {
-    this.render({
+  render = () => {
+    return {
       type: 'View',
       flex: 1,
       backgroundColor: 'white',
@@ -54,8 +46,8 @@ class AddCardsScreen {
           ],
         },
       ].concat(this.cards),
-    });
-  }
+    };
+  };
 }
 
 export default AddCardsScreen;

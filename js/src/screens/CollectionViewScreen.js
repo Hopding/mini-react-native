@@ -1,24 +1,22 @@
-class CollectionViewScreen {
-  constructor(render) {
-    this.render = render;
+import Component from '../core/Component';
 
-    this.itemsPerSection = 0;
+class CollectionViewScreen extends Component {
+  itemsPerSection = 0;
 
-    this.handleAddCard = this.handleAddCard.bind(this);
-    this.renderCards = this.renderCards.bind(this);
+  // constructor(render) {
+  //   this.render = render;
+  //   this.itemsPerSection = 0;
+  //   addOrientationChangeListener(this.renderCards);
+  //   this.renderCards();
+  // }
 
-    addOrientationChangeListener(this.renderCards);
-
-    this.renderCards();
-  }
-
-  handleAddCard() {
+  handleAddCard = () => {
     this.itemsPerSection += 1;
-    this.renderCards();
-  }
+    this.rerender();
+  };
 
-  renderCards() {
-    this.render({
+  render = () => {
+    return {
       type: 'View',
       flex: 1,
       backgroundColor: 'white',
@@ -61,8 +59,8 @@ class CollectionViewScreen {
           }),
         },
       ],
-    });
-  }
+    };
+  };
 }
 
 export default CollectionViewScreen;
