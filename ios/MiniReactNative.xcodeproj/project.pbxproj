@@ -98,7 +98,6 @@
 			children = (
 				07363271210010C40023C6E7 /* Components */,
 				075399CD20FD5D420001654A /* JSBundle */,
-				07D3E2402104D8C0008C7F37 /* NavigationController.swift */,
 				07112F8520FC2DC400650F12 /* Assets.xcassets */,
 				07112F9020FC2FEA00650F12 /* index.js */,
 				07112F7E20FC2DC300650F12 /* AppDelegate.swift */,
@@ -128,6 +127,7 @@
 		075399CD20FD5D420001654A /* JSBundle */ = {
 			isa = PBXGroup;
 			children = (
+				07D3E2402104D8C0008C7F37 /* NavigationController.swift */,
 				07D3E2422104E153008C7F37 /* JSViewControllerHarness.swift */,
 				075399CB20FD4C6D0001654A /* JSBundleHarness.swift */,
 				075399CE20FD5D640001654A /* JSBundleInjector.swift */,
@@ -151,6 +151,7 @@
 			buildConfigurationList = 07112F8D20FC2DC400650F12 /* Build configuration list for PBXNativeTarget "MiniReactNative" */;
 			buildPhases = (
 				C0FF498F6502872F3A3B1882 /* [CP] Check Pods Manifest.lock */,
+				077A9DAC2109363D007462D7 /* Compile JavaScript */,
 				07112F7720FC2DC300650F12 /* Sources */,
 				07112F7820FC2DC300650F12 /* Frameworks */,
 				07112F7920FC2DC300650F12 /* Resources */,
@@ -213,6 +214,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		077A9DAC2109363D007462D7 /* Compile JavaScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile JavaScript";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "exec > /tmp/MiniReactNative-PreBuildsLogs.txt 2>&1\necho $PROJECT_DIR\ncd ../js\nyarn start build";
+		};
 		1DE416BF5C4EA36B2370C548 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

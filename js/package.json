@@ -13,5 +13,8 @@
     "babel-preset-env": "^1.7.0",
     "metro": "^0.42.2",
     "metro-core": "^0.42.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
   }
 }
