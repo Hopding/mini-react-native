@@ -1,3 +1,7 @@
+export function orientationSensitive(target) {
+  target.orientationSensitive = true;
+}
+
 class Component {
   constructor(nativeRender) {
     this.nativeRender = nativeRender;

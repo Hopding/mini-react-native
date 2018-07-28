@@ -1,14 +1,8 @@
-import Component from '../core/Component';
+import Component, { orientationSensitive } from '../core/Component';
 
+@orientationSensitive
 class CollectionViewScreen extends Component {
   itemsPerSection = 0;
-
-  // constructor(render) {
-  //   this.render = render;
-  //   this.itemsPerSection = 0;
-  //   addOrientationChangeListener(this.renderCards);
-  //   this.renderCards();
-  // }
 
   handleAddCard = () => {
     this.itemsPerSection += 1;
@@ -25,7 +19,7 @@ class CollectionViewScreen extends Component {
           type: 'Button',
           title: 'Add Card',
           color: 'blue',
-          onPress: this.handleAddCard,
+          onPress: this.handleAddCard
         },
         {
           type: 'CollectionView',
@@ -36,11 +30,11 @@ class CollectionViewScreen extends Component {
             top: 0,
             bottom: 0,
             left: 0,
-            right: 0,
+            right: 0
           },
           itemSize: {
             width: screenWidth(),
-            height: 60,
+            height: 60
           },
           renderItem: cellIndex => ({
             type: 'View',
@@ -53,12 +47,12 @@ class CollectionViewScreen extends Component {
                 type: 'Button',
                 title: cellIndex,
                 color: 'blue',
-                onPress: () => log(`Cell Index: ${cellIndex}`),
-              },
-            ],
-          }),
-        },
-      ],
+                onPress: () => log(`Cell Index: ${cellIndex}`)
+              }
+            ]
+          })
+        }
+      ]
     };
   };
 }

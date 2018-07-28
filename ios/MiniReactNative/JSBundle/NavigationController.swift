@@ -10,7 +10,7 @@ class NavigationController: UINavigationController {
 
         do {
             let mainBundle = try String.init(contentsOf: mainBundleUrl!)
-            let _ = JSBundleHarness(forBundle: mainBundle, withNavigationController: self)
+            _ = JSBundleHarness(forBundle: mainBundle, withNavigationController: self)
         } catch {
             print("Failed to load main bundle!")
         }

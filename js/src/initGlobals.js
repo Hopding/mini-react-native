@@ -1,8 +1,7 @@
-// const global = Function('return this')();
-
+log('Native Globals');
 log(Object.keys(global));
 
-fetch = (url, config) =>
+global.fetch = (url, config) =>
   new Promise((resolve, reject) => {
     makeHttpRequest({
       url: url,
@@ -13,9 +12,9 @@ fetch = (url, config) =>
         } else {
           reject(response);
         }
-      },
+      }
     });
   });
 
-fetchJson = (url, config) =>
-  fetch(url, config).then(({ data }) => JSON.parse(data));
+global.fetchJson = (url, config) =>
+  global.fetch(url, config).then(({ data }) => JSON.parse(data));

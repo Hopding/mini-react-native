@@ -98,6 +98,12 @@ class JSBundleHarness {
         let jsVCHarness = JSViewControllerHarness(withTitle: title.isString ? title.toString() : "")
         let injectionReadyRender = injector.prepForInjection(value: jsVCHarness.render)
         let vcd = viewControllerDescriptor.construct(withArguments: [injectionReadyRender])
+        
+        let isOrientationSensitive = viewControllerDescriptor.forProperty("orientationSensitive")
+        if (isOrientationSensitive?.isBoolean)! && isOrientationSensitive?.toBool() == true {
+            addOrientationChangeListener(listener: (vcd?.forProperty("rerender"))!)
+        }
+        
         _ = vcd?.forProperty("rerender").call(withArguments: [])
         navigationController.pushViewController(jsVCHarness.viewController, animated: true)
     }

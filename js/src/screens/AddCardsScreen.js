@@ -12,32 +12,27 @@ class AddCardsScreen extends Component {
   };
 
   handleRemoveCard = () => {
-    this.cards.pop();
+    this.cardCount -= 1;
     this.rerender();
   };
 
   render = () => {
-    // const cardViews = _.chunk(_.range(this.cardCount), 2).map((indexes, i) => ({
-    //   type: 'View',
-    //   flex: 1,
-    //   flexDirection: i % 2 === 0 ? 'column' : 'row',
-    //   children: indexes.map(index => ({
-    //     type: 'View',
-    //     flex: 1,
-    //     backgroundColor: this.cardColors[index % this.cardColors.length],
-    //   })),
-    // }));
+    const { cardCount, cardColors } = this;
 
-    const cardViews = _(this.cardCount).range().chunk(2).map((indexes, i) => ({
-      type: 'View',
-      flex: 1,
-      flexDirection: i % 2 === 0 ? 'column' : 'row',
-      children: indexes.map(index => ({
+    const cardViews = _(cardCount)
+      .range()
+      .chunk(3)
+      .map((indexes, i) => ({
         type: 'View',
         flex: 1,
-        backgroundColor: this.cardColors[index % this.cardColors.length],
-      })),
-    })).value();
+        flexDirection: i % 2 === 0 ? 'column' : 'row',
+        children: indexes.map(index => ({
+          type: 'View',
+          flex: 1,
+          backgroundColor: cardColors[index % cardColors.length]
+        }))
+      }))
+      .value();
 
     return {
       type: 'View',
@@ -53,18 +48,17 @@ class AddCardsScreen extends Component {
               type: 'Button',
               title: 'Add Card',
               color: 'blue',
-              onPress: this.handleAddCard,
+              onPress: this.handleAddCard
             },
             {
               type: 'Button',
               title: 'Remove Card',
               color: 'red',
-              onPress: this.handleRemoveCard,
-            },
-          ],
-        },
-        // ].concat(this.cards),
-      ].concat(cardViews),
+              onPress: this.handleRemoveCard
+            }
+          ]
+        }
+      ].concat(cardViews)
     };
   };
 }
