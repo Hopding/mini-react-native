@@ -26,6 +26,7 @@
 		07D3E2432104E153008C7F37 /* JSViewControllerHarness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E2422104E153008C7F37 /* JSViewControllerHarness.swift */; };
 		07D3E2452104EF8C008C7F37 /* JSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E2442104EF8C008C7F37 /* JSTextView.swift */; };
 		07D3E2482105202B008C7F37 /* JSCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E2472105202B008C7F37 /* JSCollectionView.swift */; };
+		CE71DDB1210CE42A0003E071 /* JSBundleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71DDB0210CE42A0003E071 /* JSBundleLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		07D3E2472105202B008C7F37 /* JSCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSCollectionView.swift; sourceTree = "<group>"; };
 		0B24F996CC8069EAD784D168 /* Pods-MiniReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniReactNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative.release.xcconfig"; sourceTree = "<group>"; };
 		91F1FF34CC08CDF11BDC3713 /* Pods-MiniReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniReactNative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniReactNative/Pods-MiniReactNative.debug.xcconfig"; sourceTree = "<group>"; };
+		CE71DDB0210CE42A0003E071 /* JSBundleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBundleLoader.swift; sourceTree = "<group>"; };
 		E6CA10607EEA49E7A954E6B8 /* Pods_MiniReactNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniReactNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				07363271210010C40023C6E7 /* Components */,
 				075399CD20FD5D420001654A /* JSBundle */,
 				07112F8520FC2DC400650F12 /* Assets.xcassets */,
+				07D3E2402104D8C0008C7F37 /* NavigationController.swift */,
 				07112F9020FC2FEA00650F12 /* index.js */,
 				07112F7E20FC2DC300650F12 /* AppDelegate.swift */,
 				07112F8220FC2DC300650F12 /* Main.storyboard */,
@@ -127,10 +130,10 @@
 		075399CD20FD5D420001654A /* JSBundle */ = {
 			isa = PBXGroup;
 			children = (
-				07D3E2402104D8C0008C7F37 /* NavigationController.swift */,
 				07D3E2422104E153008C7F37 /* JSViewControllerHarness.swift */,
 				075399CB20FD4C6D0001654A /* JSBundleHarness.swift */,
 				075399CE20FD5D640001654A /* JSBundleInjector.swift */,
+				CE71DDB0210CE42A0003E071 /* JSBundleLoader.swift */,
 			);
 			path = JSBundle;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				075399CF20FD5D640001654A /* JSBundleInjector.swift in Sources */,
 				07112F7F20FC2DC300650F12 /* AppDelegate.swift in Sources */,
 				07363273210010DF0023C6E7 /* Extensions.swift in Sources */,
+				CE71DDB1210CE42A0003E071 /* JSBundleLoader.swift in Sources */,
 				0736327521001A390023C6E7 /* utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

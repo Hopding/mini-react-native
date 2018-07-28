@@ -1,4 +1,4 @@
-import Component from '../core/Component';
+import Component from '../../core/Component';
 
 const TopSectionView = ({ onChangeUsername, onPressSearch }) => ({
   type: 'View',
@@ -9,7 +9,7 @@ const TopSectionView = ({ onChangeUsername, onPressSearch }) => ({
       type: 'Text',
       text: 'Enter a username and press Search.',
       fontSize: 20,
-      color: 'black',
+      color: 'black'
     },
     {
       type: 'TextField',
@@ -19,7 +19,7 @@ const TopSectionView = ({ onChangeUsername, onPressSearch }) => ({
       borderColor: 'gray',
       borderWidth: 1,
       borderRadius: 5,
-      onChangeText: onChangeUsername,
+      onChangeText: onChangeUsername
     },
     {
       type: 'Button',
@@ -31,12 +31,12 @@ const TopSectionView = ({ onChangeUsername, onPressSearch }) => ({
       margin: 15,
       paddingLeft: 25,
       paddingRight: 25,
-      onPress: onPressSearch,
-    },
-  ],
+      onPress: onPressSearch
+    }
+  ]
 });
 
-class GitHubScreen extends Component {
+class UserSearchScreen extends Component {
   inputText = '';
   entries = [];
   keys = ['login', 'id', 'type', 'company', 'blog', 'location', 'email', 'bio'];
@@ -59,9 +59,9 @@ class GitHubScreen extends Component {
           },
           onPressSearch: () => {
             fetchJson(`https://api.github.com/users/${this.inputText}`).then(
-              this.handleJson,
+              this.handleJson
             );
-          },
+          }
         }),
         {
           type: 'CollectionView',
@@ -72,11 +72,11 @@ class GitHubScreen extends Component {
             top: 10,
             bottom: 10,
             left: 10,
-            right: 10,
+            right: 10
           },
           itemSize: {
             width: screenWidth(),
-            height: 75,
+            height: 75
           },
           renderItem: cellIndex => ({
             type: 'View',
@@ -87,20 +87,20 @@ class GitHubScreen extends Component {
                 type: 'Text',
                 text: this.entries[cellIndex][0],
                 color: 'black',
-                fontSize: 15,
+                fontSize: 15
               },
               {
                 type: 'Text',
                 text: this.entries[cellIndex][1],
                 color: 'black',
-                fontSize: 20,
-              },
-            ],
-          }),
-        },
-      ],
+                fontSize: 20
+              }
+            ]
+          })
+        }
+      ]
     };
   };
 }
 
-export default GitHubScreen;
+export default UserSearchScreen;

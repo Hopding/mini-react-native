@@ -2,7 +2,9 @@ import Component from '../core/Component';
 
 import AddCardsScreen from './AddCardsScreen';
 import CollectionViewScreen from './CollectionViewScreen';
-import GitHubScreen from './GitHubScreen';
+
+import UserSearchScreen from './github/UserSearchScreen';
+import RepoSearchScreen from './github/RepoSearchScreen';
 
 class HomeScreen extends Component {
   render = () => {
@@ -15,29 +17,29 @@ class HomeScreen extends Component {
       children: [
         {
           type: 'Text',
-          text: 'Welcome!',
+          text: 'GitHub Search Tool',
           color: 'black',
-          fontSize: 50,
+          fontSize: 40
         },
         {
           type: 'Button',
-          title: 'Next Screen',
+          title: 'User Search',
           color: 'blue',
-          onPress: () => navigate(AddCardsScreen, 'Add Cards'),
+          onPress: () => navigate(UserSearchScreen, 'User Search')
         },
         {
           type: 'Button',
-          title: 'Collection View Screen',
+          title: 'Repository Search',
           color: 'blue',
-          onPress: () => navigate(CollectionViewScreen, 'Collection View'),
+          onPress: () => navigate(RepoSearchScreen, 'Repo Search')
         },
         {
           type: 'Button',
           title: 'GitHub Data Screen',
           color: 'blue',
-          onPress: () => navigate(GitHubScreen, 'GitHub User Search'),
-        },
-      ],
+          onPress: () => navigate(GitHubScreen, 'GitHub User Search')
+        }
+      ]
     };
   };
 }

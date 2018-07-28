@@ -13,6 +13,7 @@ struct JSViewDescriptor {
     let justifyContent: String?
     let alignItems: String?
     let flexDirection: String?
+    let flexWrap: String?
     
     let backgroundColor: String?
     let borderColor: String?
@@ -45,6 +46,7 @@ struct JSViewDescriptor {
         self.justifyContent = toString(jsValue, "justifyContent")
         self.alignItems = toString(jsValue, "alignItems")
         self.flexDirection = toString(jsValue, "flexDirection")
+        self.flexWrap = toString(jsValue, "flexWrap")
         
         self.backgroundColor = toString(jsValue, "backgroundColor")
         self.borderColor = toString(jsValue, "borderColor")
@@ -79,6 +81,7 @@ func createUIView(fromValue descriptor: JSValue, ofType view: UIView = UIView())
     view.flex.justifyContent(createFlexJustifyContent(from: desc.justifyContent))
     view.flex.alignItems(createFlexAlignItems(from: desc.alignItems))
     view.flex.direction(createFlexDirection(from: desc.flexDirection))
+    view.flex.wrap(createFlexWrap(from: desc.flexWrap))
     
     view.flex.padding(desc.padding)
     view.flex.paddingTop(desc.paddingTop)

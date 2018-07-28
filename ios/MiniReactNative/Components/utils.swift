@@ -2,7 +2,17 @@ import UIKit
 import JavaScriptCore
 import FlexLayout
 
+func parseIntFromHexString(_ string: String) -> Int {
+    return Int(String((string.dropFirst())), radix: 16)!
+}
+
 func createUIColor(from string: String?) -> UIColor {
+    if (string?.first == "#" && string?.count == 9) {
+        return UIColor(rgba: parseIntFromHexString(string!))
+    }
+    if (string?.first == "#" && string?.count == 7) {
+        return UIColor(rgb: parseIntFromHexString(string!))
+    }
     switch string?.lowercased() {
     case "transparent": return UIColor(white: 1, alpha: 0.0)
     case "green":       return UIColor.green
@@ -13,8 +23,8 @@ func createUIColor(from string: String?) -> UIColor {
     case "purple":      return UIColor.purple
     case "cyan":        return UIColor.cyan
     case "white":       return UIColor.white
-    case "lightGray":   return UIColor.lightGray
-    case "gray":   return UIColor.gray
+    case "lightgray":   return UIColor.lightGray
+    case "gray":        return UIColor.gray
     case "black":       return UIColor.black
     default:            return UIColor(white: 1, alpha: 0.0)
     }
@@ -49,6 +59,15 @@ func createFlexDirection(from string: String?) -> Flex.Direction {
     case "columnReverse": return Flex.Direction.columnReverse
     case "rowReverse":    return Flex.Direction.rowReverse
     default:              return Flex.Direction.column
+    }
+}
+
+func createFlexWrap(from string: String?) -> Flex.Wrap {
+    switch string {
+    case "noWrap":        return Flex.Wrap.noWrap
+    case "wrap":          return Flex.Wrap.wrap
+    case "wrapReverse":   return Flex.Wrap.wrapReverse
+    default:              return Flex.Wrap.wrap
     }
 }
 

@@ -7,7 +7,10 @@ global.fetch = (url, config) =>
       url: url,
       method: (config || {}).method || 'GET',
       callback: response => {
-        if (response.statusCode === 200) {
+        if (response.error) {
+          log(response.error);
+          reject(response.error);
+        } else if (response.statusCode === 200) {
           resolve(response);
         } else {
           reject(response);

@@ -13,7 +13,7 @@ class JSBundleHarness {
         self.jsContext = JSContext()!
         self.navigationController = navigationController
         self.injector = JSBundleInjector(for: jsContext)
-
+        
         injector.injectGlobal(value: self.log, withName: "log")
         injector.injectGlobal(value: self.setTimeout, withName: "setTimeout")
         injector.injectGlobal(value: self.navigate, withName: "navigate")
@@ -25,7 +25,7 @@ class JSBundleHarness {
 
         jsContext.exceptionHandler = self.handleJSException;
         jsContext.evaluateScript(jsBundle)
-        
+
         NotificationCenter.default.addObserver(
             self,
             selector:
@@ -36,6 +36,7 @@ class JSBundleHarness {
     }
     
     deinit {
+        print("DEALLOCATING YO!")
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -64,6 +65,11 @@ class JSBundleHarness {
         let url      = config.forProperty("url").toString()!
         let method   = config.forProperty("method").toString().uppercased()
         let callback = config.forProperty("callback")
+        
+        if (url.isEmpty) {
+            _ = callback?.call(withArguments: [[ "error": "Missing 'url' config value" ]])
+            return
+        }
 
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = method
