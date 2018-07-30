@@ -4,7 +4,7 @@ import JavaScriptCore
 // The JS bundle can be:
 //   * (.Bundler) loaded via HTTP from the bundling server during development
 //   * (.Assets)  read from the app's assets for production builds
-let jsBundleSource = JSBundleSource.Bundler
+let jsBundleSource = JSBundleSource.Assets
 
 class NavigationController: UINavigationController {
     
