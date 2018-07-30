@@ -4,7 +4,6 @@ import FlexLayout
 class FlexRootView: UIView {
     init() {
         super.init(frame: .zero)
-        self.backgroundColor = UIColor.darkGray
         self.flex.direction(.column)
     }
 

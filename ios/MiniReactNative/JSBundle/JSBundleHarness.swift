@@ -22,6 +22,7 @@ class JSBundleHarness {
         injector.injectGlobal(value: self.screenHeight, withName: "screenHeight")
         injector.injectGlobal(value: self.addOrientationChangeListener, withName: "addOrientationChangeListener")
         injector.injectGlobal(value: self.makeHttpRequest, withName: "makeHttpRequest")
+        injector.injectGlobal(value: self.openURL, withName: "openURL")
 
         jsContext.exceptionHandler = self.handleJSException;
         jsContext.evaluateScript(jsBundle)
@@ -36,7 +37,6 @@ class JSBundleHarness {
     }
     
     deinit {
-        print("DEALLOCATING YO!")
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -86,6 +86,14 @@ class JSBundleHarness {
                 }
             }
         }).resume()
+    }
+    
+    func openURL(link: String) {
+        if let link = URL(string: link) {
+            UIApplication.shared.open(link)
+        } else {
+            print("Invalid URL: \"\(link)\"")
+        }
     }
     
     func screenWidth() -> CGFloat {

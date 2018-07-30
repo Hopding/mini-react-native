@@ -107,15 +107,25 @@ class RepoSearchScreen extends Component {
             height: 75,
           },
           renderItem: cellIndex => ({
-            type: 'View',
+            type: 'Button',
+            title: this.names[cellIndex],
             flex: 1,
-            backgroundColor: 'white',
+            margin: 10,
+            borderColor: 'lightGray',
+            borderWidth: 1,
+            borderRadius: 5,
+            justifyContent: 'center',
+            alignItems: 'center',
             children: [
               {
-                type: 'Text',
-                text: this.names[cellIndex],
-                color: 'black',
-                fontSize: 15,
+                type: 'Button',
+                flex: 1,
+                backgroundColor: 'white',
+                title: this.names[cellIndex],
+                onPress: () => {
+                  log(this.names[cellIndex]),
+                  openURL(`https://github.com/${this.names[cellIndex]}`)
+                }
               },
             ],
           }),
