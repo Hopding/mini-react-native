@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import Component from '../../core/Component';
+import Component, { orientationSensitive } from '../../core/Component';
 
 const SearchTermEntry = ({ onChangeText, onAddTerm }) => ({
   type: 'View',
@@ -51,9 +51,9 @@ const SearchTermList = ({ terms }) => ({
   })),
 });
 
+@orientationSensitive
 class RepoSearchScreen extends Component {
   inputText = '';
-  // searchTerms = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'];
   searchTerms = [];
   names = [];
 

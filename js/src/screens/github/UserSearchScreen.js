@@ -1,4 +1,4 @@
-import Component from '../../core/Component';
+import Component, { orientationSensitive } from '../../core/Component';
 
 const TopSectionView = ({ onChangeUsername, onPressSearch }) => ({
   type: 'View',
@@ -32,6 +32,7 @@ const TopSectionView = ({ onChangeUsername, onPressSearch }) => ({
   ]
 });
 
+@orientationSensitive
 class UserSearchScreen extends Component {
   inputText = '';
   items = []
@@ -52,6 +53,7 @@ class UserSearchScreen extends Component {
       type: 'View',
       flex: 1,
       backgroundColor: 'white',
+      flexDirection: 'column',
       children: [
         TopSectionView({
           onChangeUsername: newText => {
