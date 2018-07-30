@@ -33,12 +33,6 @@ class HomeScreen extends Component {
           color: 'blue',
           onPress: () => navigate(RepoSearchScreen, 'Repo Search')
         },
-        {
-          type: 'Button',
-          title: 'GitHub Data Screen',
-          color: 'blue',
-          onPress: () => navigate(GitHubScreen, 'GitHub User Search')
-        }
       ]
     };
   };

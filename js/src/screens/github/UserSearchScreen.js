@@ -2,15 +2,11 @@ import Component from '../../core/Component';
 
 const TopSectionView = ({ onChangeUsername, onPressSearch }) => ({
   type: 'View',
+  justifyContent: 'center',
   alignItems: 'center',
   backgroundColor: 'white',
+  flexDirection: 'row',
   children: [
-    {
-      type: 'Text',
-      text: 'Enter a username and press Search.',
-      fontSize: 20,
-      color: 'black'
-    },
     {
       type: 'TextField',
       placeholder: 'Enter Username',
@@ -38,13 +34,17 @@ const TopSectionView = ({ onChangeUsername, onPressSearch }) => ({
 
 class UserSearchScreen extends Component {
   inputText = '';
-  entries = [];
-  keys = ['login', 'id', 'type', 'company', 'blog', 'location', 'email', 'bio'];
+  items = []
 
-  handleJson = json => {
-    this.inputText = '';
-    this.entries = this.keys.map(key => [key, json[key]]);
-    this.rerender();
+  search = () => {
+    const { inputText } = this;
+    const baseUrl = `https://api.github.com/search/users?q=${inputText}`;
+
+    return fetchJson(baseUrl).then(json => {
+      this.inputText = '';
+      this.items = json.items;
+      this.rerender();
+    });
   };
 
   render = () => {
@@ -57,48 +57,44 @@ class UserSearchScreen extends Component {
           onChangeUsername: newText => {
             this.inputText = newText;
           },
-          onPressSearch: () => {
-            fetchJson(`https://api.github.com/users/${this.inputText}`).then(
-              this.handleJson
-            );
-          }
+          onPressSearch: this.search,
         }),
         {
           type: 'CollectionView',
           flex: 1,
           backgroundColor: 'white',
-          itemsPerSection: this.entries.length,
+          itemsPerSection: this.items.length,
           sectionInsets: {
             top: 10,
             bottom: 10,
             left: 10,
-            right: 10
+            right: 10,
           },
           itemSize: {
             width: screenWidth(),
-            height: 75
+            height: 75,
           },
           renderItem: cellIndex => ({
             type: 'View',
             flex: 1,
-            backgroundColor: 'white',
+            margin: 10,
+            borderColor: 'lightGray',
+            borderWidth: 1,
+            borderRadius: 5,
+            justifyContent: 'center',
+            alignItems: 'center',
             children: [
               {
-                type: 'Text',
-                text: this.entries[cellIndex][0],
-                color: 'black',
-                fontSize: 15
+                type: 'Button',
+                flex: 1,
+                backgroundColor: 'white',
+                title: this.items[cellIndex].login,
+                onPress: () => openURL(`https://github.com/${this.items[cellIndex].login}`)
               },
-              {
-                type: 'Text',
-                text: this.entries[cellIndex][1],
-                color: 'black',
-                fontSize: 20
-              }
-            ]
-          })
-        }
-      ]
+            ],
+          }),
+        },
+      ],
     };
   };
 }
