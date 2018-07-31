@@ -229,7 +229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "exec > /tmp/MiniReactNative-PreBuildsLogs.txt 2>&1\necho $PROJECT_DIR\ncd ../js\nyarn start build";
+			shellScript = "exec > /tmp/MiniReactNative-PreBuildsLogs.txt 2>&1\necho $PROJECT_DIR\ncd ../js\nyarn install\nyarn start build";
 		};
 		1DE416BF5C4EA36B2370C548 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
