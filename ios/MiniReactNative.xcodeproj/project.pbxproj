@@ -154,7 +154,6 @@
 			buildConfigurationList = 07112F8D20FC2DC400650F12 /* Build configuration list for PBXNativeTarget "MiniReactNative" */;
 			buildPhases = (
 				C0FF498F6502872F3A3B1882 /* [CP] Check Pods Manifest.lock */,
-				077A9DAC2109363D007462D7 /* Compile JavaScript */,
 				07112F7720FC2DC300650F12 /* Sources */,
 				07112F7820FC2DC300650F12 /* Frameworks */,
 				07112F7920FC2DC300650F12 /* Resources */,
@@ -217,20 +216,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		077A9DAC2109363D007462D7 /* Compile JavaScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Compile JavaScript";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "exec > /tmp/MiniReactNative-PreBuildsLogs.txt 2>&1\necho $PROJECT_DIR\ncd ../js\nyarn install\nyarn start build";
-		};
 		1DE416BF5C4EA36B2370C548 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
